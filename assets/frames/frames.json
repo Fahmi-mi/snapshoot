@@ -1,0 +1,146 @@
+{
+  "retro": [
+    {
+      "id": "sprocket",
+      "name": "Sprocket",
+      "file": "frame-sprocket.png",
+      "caption": {
+        "text": "{date}",
+        "font": "600 46px \"Caveat\", cursive",
+        "color": "#F7EFE1",
+        "y": 1722
+      }
+    },
+    {
+      "id": "kartu-pos",
+      "name": "Kartu Pos",
+      "file": "frame-kartu-pos.png",
+      "caption": {
+        "text": "snap & smile · {date}",
+        "font": "600 44px \"Caveat\", cursive",
+        "color": "#D96B45",
+        "y": 1722
+      }
+    },
+    {
+      "id": "studio-sage",
+      "name": "Studio Sage",
+      "file": "frame-studio-sage.png",
+      "caption": {
+        "text": "SNAPSHOOT",
+        "font": "700 30px \"Nunito\", sans-serif",
+        "color": "#FFFDF9",
+        "y": 1722,
+        "letterSpacing": 10
+      }
+    },
+    {
+      "id": "bergerigi",
+      "name": "Bergerigi",
+      "file": "frame-bergerigi.png",
+      "caption": {
+        "text": "teman baik · {date}",
+        "font": "600 44px \"Caveat\", cursive",
+        "color": "#2B2320",
+        "y": 1718
+      }
+    },
+    {
+      "id": "polos",
+      "name": "Polos",
+      "file": "frame-polos.png",
+      "caption": {
+        "text": "SNAPSHOOT · {date}",
+        "font": "700 26px \"Nunito\", sans-serif",
+        "color": "#7A6555",
+        "y": 1722,
+        "letterSpacing": 6
+      }
+    },
+    {
+      "id": "terracotta",
+      "name": "Terracotta",
+      "file": "frame-terracotta.png",
+      "caption": {
+        "text": "bestie · {date}",
+        "font": "600 46px \"Caveat\", cursive",
+        "color": "#FFFDF9",
+        "y": 1722
+      }
+    }
+  ],
+  "funky": [
+    {
+      "id": "sirkus",
+      "name": "Sirkus",
+      "file": "frame-sirkus.png",
+      "caption": {
+        "text": "SNAPSHOOT",
+        "font": "40px \"Lilita One\", sans-serif",
+        "color": "#1F6BFF",
+        "y": 1735,
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "blok-biru",
+      "name": "Blok Biru",
+      "file": "frame-blok-biru.png",
+      "caption": {
+        "text": "SNAPSHOOT · {date}",
+        "font": "34px \"Lilita One\", sans-serif",
+        "color": "#FFFFFF",
+        "y": 1722,
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "halftone",
+      "name": "Halftone",
+      "file": "frame-halftone.png",
+      "caption": {
+        "text": "SNAPSHOOT · {date}",
+        "font": "34px \"Lilita One\", sans-serif",
+        "color": "#E8232A",
+        "y": 1722,
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "checker",
+      "name": "Checker",
+      "file": "frame-checker.png",
+      "caption": {
+        "text": "RACE DAY · {date}",
+        "font": "34px \"Lilita One\", sans-serif",
+        "color": "#1C1C1E",
+        "y": 1735,
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "blok-hijau",
+      "name": "Blok Hijau",
+      "file": "frame-blok-hijau.png",
+      "caption": {
+        "text": "FRESH! · {date}",
+        "font": "34px \"Lilita One\", sans-serif",
+        "color": "#FFFFFF",
+        "y": 1722,
+        "letterSpacing": 2
+      }
+    },
+    {
+      "id": "bintang",
+      "name": "Bintang",
+      "file": "frame-bintang.png",
+      "caption": {
+        "text": "STARRY · {date}",
+        "font": "34px \"Lilita One\", sans-serif",
+        "color": "#FF1F8F",
+        "y": 1722,
+        "letterSpacing": 2
+      }
+    }
+  ]
+}
