@@ -1,0 +1,285 @@
+:root, [data-theme="retro"] {
+  --bg: #F7EFE1;
+  --bg-image: none;
+  --bg-size: auto;
+  --surface: #FFFDF9;
+  --ink: #4A3728;
+  --muted: #7A6555;
+  --primary: #D96B45;
+  --on-primary: #FFFDF9;
+  --select: #D96B45;
+  --on-select: #FFFDF9;
+  --danger: #D96B45;
+  --secondary: #8A9A7E;
+  --on-secondary: #FFFDF9;
+  --accent: #E8B44A;
+  --on-accent: #2B2320;
+
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-accent: 'Caveat', cursive;
+  --display-weight: 600;
+
+  --pad: 24px;
+  --foot-bottom: 34px;
+  --controls-bottom: 38px;
+
+  --radius-btn: 22px;
+  --radius-stage: 22px;
+
+  --bw: 0px;
+  --bc: transparent;
+  --press: 1px;
+  --shadow-btn: none;
+  --shadow-btn-active: none;
+  --shadow-ghost: none;
+  --shadow-outline: none;
+  --shadow-toggle: 0 1px 0 rgba(74, 55, 40, .08);
+  --shadow-stage: none;
+  --toggle-bw: 1px;
+  --toggle-bc: rgba(74, 55, 40, .14);
+
+  --btn-font: 'Fredoka', sans-serif;
+  --btn-weight: 600;
+  --btn-size: 16px;
+  --btn-tracking: 0;
+  --btn-transform: none;
+  --btn-pad: 15px 30px;
+  --btn-pad-block: 17px 28px;
+  --btn-size-block: 17px;
+
+  --ghost-bg: transparent;
+  --ghost-bw: 2px;
+  --ghost-border: #2B2320;
+  --ghost-ink: #4A3728;
+  --outline-bg: transparent;
+  --outline-bw: 2px;
+  --outline-border: rgba(247, 239, 225, .55);
+  --outline-ink: #F7EFE1;
+
+  --brand-font: 'Fredoka', sans-serif;
+  --brand-weight: 700;
+  --brand-size: 13px;
+  --brand-tracking: 2.5px;
+  --brand-ink: #4A3728;
+  --brand-bg: transparent;
+  --brand-border: 0;
+  --brand-pad: 0;
+  --brand-shadow: none;
+  --nav-font: 'Nunito', sans-serif;
+  --nav-weight: 600;
+  --nav-size: 13px;
+  --nav-transform: none;
+  --nav-ink: #7A6555;
+
+  --title-transform: none;
+  --title-tracking: -.5px;
+  --title-leading: 1.05;
+  --title-accent: #4A3728;
+  --hero-align: flex-start;
+  --hero-text-align: left;
+  --hero-gap: 20px;
+  --hero-title-gap: 6px;
+  --hero-size: 42px;
+  --hero-sub-size: 15.5px;
+  --hero-sub-width: 30ch;
+  --page-title-size: 28px;
+  --sub-size: 14.5px;
+
+  --badge-font: 'Fredoka', sans-serif;
+  --badge-weight: 600;
+  --badge-size: 12px;
+  --badge-tracking: 1.5px;
+  --badge-ink: #66755B;
+  --badge-bg: transparent;
+  --badge-border: 0;
+  --badge-pad: 0;
+
+  --grid-top: 20px;
+  --grid-gap: 16px;
+  --card-label-font: 'Nunito', sans-serif;
+  --card-label-weight: 700;
+  --card-label-size: 14px;
+  --card-label-transform: none;
+  --card-border: 1px solid rgba(74, 55, 40, .12);
+  --card-border-selected: 3px solid #D96B45;
+  --filter-selected-shadow: none;
+  --filter-preview-h: 112px;
+  --filter-preview-radius: 14px;
+  --filter-label-gap: 8px;
+  --frame-thumb-w: 118px;
+  --frame-thumb-shadow: none;
+  --frame-outline: 3px solid #D96B45;
+
+  --check-size: 24px;
+  --check-top: 8px;
+  --check-right: 8px;
+  --check-border: 0;
+  --check-rotate: 0deg;
+  --check-font: 'Nunito', sans-serif;
+  --check-font-size: 13px;
+
+  --photo-placeholder:
+    radial-gradient(circle at 28% 26%, rgba(255, 226, 196, .95) 0 22%, transparent 22.5%),
+    radial-gradient(circle at 72% 64%, rgba(138, 154, 126, .85) 0 26%, transparent 26.5%),
+    linear-gradient(160deg, #E3D3BC 0%, #E8D9C4 42%, #C9A87E 100%);
+  --strip-shadow: drop-shadow(0 10px 22px rgba(43, 35, 32, .22));
+
+  --foot-cta-bg: transparent;
+  --foot-bg: #FBF6EC;
+  --foot-line: 1px solid rgba(74, 55, 40, .08);
+  --foot-font: 'Caveat', cursive;
+  --foot-weight: 600;
+  --foot-size: 21px;
+  --foot-ink: #7A6555;
+  --foot-transform: lowercase;
+
+  --round-size: 38px;
+  --round-bw: 2px;
+  --round-bc: #2B2320;
+  --round-bg: transparent;
+  --round-ink: #2B2320;
+  --shadow-round: none;
+  --round-light-bc: rgba(247, 239, 225, .5);
+  --round-light-bg: transparent;
+  --round-light-ink: #F7EFE1;
+
+  --ctrl-size: 52px;
+  --ctrl-bw: 0px;
+  --ctrl-bc: transparent;
+  --ctrl-font: 'Fredoka', sans-serif;
+  --shadow-ctrl: none;
+  --soft-bg: rgba(247, 239, 225, .14);
+  --soft-ink: #F7EFE1;
+
+  --capture-bg: #2B2320;
+  --on-capture: #F7EFE1;
+  --capture-foot-bg: transparent;
+  --stage-bg: #3B332C;
+  --stage-border: 0;
+  --count-font: 'Fredoka', sans-serif;
+  --count-weight: 600;
+  --count-size: 13px;
+  --count-tracking: 1px;
+  --count-ink: #F7EFE1;
+  --count-bg: transparent;
+  --count-border: 0;
+  --count-pad: 0;
+  --count-shadow: none;
+
+  --progress-h: 5px;
+  --progress-border: 0;
+  --progress-bg: rgba(247, 239, 225, .22);
+  --progress-fill: #E8B44A;
+  --thumb-w: 46px;
+  --thumb-h: 60px;
+  --thumb-border: 2px solid #F7EFE1;
+  --thumb-empty-border: rgba(247, 239, 225, .45);
+
+  --countdown-circle: 132px;
+  --countdown-size: 74px;
+  --countdown-ink: #F7EFE1;
+  --countdown-stroke-w: 0;
+  --countdown-stroke-c: transparent;
+  --countdown-bg: rgba(43, 35, 32, .55);
+
+  --shutter-size: 92px;
+  --shutter-bg: #D96B45;
+  --shutter-border: 6px solid #F7EFE1;
+  --shutter-shadow: 0 0 0 3px #D96B45;
+  --shutter-ink: transparent;
+  --shutter-label: none;
+
+  --notice-bg: #3B332C;
+  --notice-border: 2px dashed rgba(247, 239, 225, .28);
+  --notice-pad: 28px 24px 26px;
+  --notice-gap: 18px;
+  --notice-ink: #F7EFE1;
+  --notice-muted: rgba(247, 239, 225, .72);
+  --notice-title-size: 24px;
+  --notice-text-size: 15px;
+  --notice-icon-size: 74px;
+  --notice-icon-bg: rgba(247, 239, 225, .1);
+  --notice-icon-border: 0;
+  --notice-icon-ink: #E8B44A;
+  --notice-slash-h: 3px;
+  --notice-slash-border: 0;
+  --notice-box-bg: rgba(247, 239, 225, .08);
+  --notice-box-border: 0;
+  --notice-box-radius: 14px;
+  --notice-box-font: 'Nunito', sans-serif;
+  --notice-box-weight: 700;
+  --notice-box-title-size: 12.5px;
+  --notice-box-title: #E8B44A;
+  --notice-box-ink: rgba(247, 239, 225, .72);
+  --upload-slot-border: rgba(247, 239, 225, .35);
+
+  --panel-bg: #F7EFE1;
+  --panel-border: 0;
+  --panel-ink: #4A3728;
+  --panel-slot-ink: #7A6555;
+  --panel-note-ink: #D96B45;
+
+  --pill-font: 'Fredoka', sans-serif;
+  --pill-weight: 600;
+  --pill-size: 11px;
+  --pill-tracking: .4px;
+  --pill-bg: #E8B44A;
+  --pill-ink: #2B2320;
+  --pill-border: 0;
+  --pill-pad: 5px 12px;
+  --result-title-weight: 700;
+  --result-title-size: 30px;
+  --result-title-size-lg: 52px;
+}
+
+/* penanda pilihan gaya retro */
+[data-theme="retro"] .frame-card .card-check { display: none; }
+[data-theme="retro"] .frame-card.is-selected .card-label::after { content: ' ✓'; }
+[data-theme="retro"] .frame-card.is-selected .frame-thumb { outline: none; filter: drop-shadow(0 6px 16px rgba(217, 107, 69, .4)); }
+[data-theme="retro"] .strip-panel .step-badge { color: #66755B; }
+[data-theme="retro"] .btn-primary:hover { background: #C25C39; }
+[data-theme="retro"] .btn-ghost:hover { background: rgba(43, 35, 32, .06); }
+[data-theme="retro"] .hero-strip:last-child { display: none; }
+
+@media (min-width: 720px) {
+  [data-theme="retro"] {
+    --pad: 44px;
+    --hero-size: 60px;
+    --hero-sub-size: 18px;
+    --page-title-size: 38px;
+    --sub-size: 16px;
+    --round-size: 42px;
+    --ctrl-size: 56px;
+    --shutter-size: 104px;
+    --filter-preview-h: 132px;
+    --card-label-size: 15px;
+    --frame-thumb-w: 150px;
+    --countdown-circle: 180px;
+    --countdown-size: 100px;
+    --thumb-w: 74px;
+    --thumb-h: 96px;
+    --count-size: 18px;
+    --count-tracking: 0;
+    --result-title-size: 40px;
+    --btn-size: 17px;
+  }
+  [data-theme="retro"] .hero-strip:last-child { display: inline-block; }
+}
+
+@media (min-width: 1080px) {
+  [data-theme="retro"] {
+    --pad: 56px;
+    --hero-size: 64px;
+    --page-title-size: 34px;
+    --grid-top: 30px;
+    --round-size: 44px;
+    --shutter-size: 88px;
+    --ctrl-size: 52px;
+    --countdown-circle: 190px;
+    --countdown-size: 104px;
+    --brand-size: 15px;
+    --brand-tracking: 3px;
+    --nav-size: 14px;
+  }
+}

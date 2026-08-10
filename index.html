@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="funky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Snapshoot — Photobooth online, langsung dari browser</title>
+<meta name="description" content="Photobooth virtual gratis. Ambil empat foto, pilih filter dan frame, lalu unduh strip fotomu. Semua diproses di perangkatmu sendiri.">
+<meta name="theme-color" content="#1F6BFF">
+<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('snapshoot-theme'); } catch (e) {}
+  document.documentElement.setAttribute('data-theme', saved === 'retro' ? 'retro' : 'funky');
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&family=Caveat:wght@600&family=Lilita+One&family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/theme-retro.css">
+<link rel="stylesheet" href="css/theme-funky.css">
+</head>
+<body>
+
+<!-- landing -->
+<section class="view view-landing is-active" id="view-landing">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-landing">SNAP</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-star decor-star-b">✧</span>
+    <span class="decor-dots decor-dots-a"></span>
+  </div>
+
+  <header class="site-head">
+    <button class="brand" type="button" data-nav="landing">SNAPSHOOT</button>
+    <div class="head-right">
+      <nav class="head-nav">
+        <button type="button" data-copy="nav.1" data-nav="filter"></button>
+        <button type="button" data-copy="nav.2" data-nav="frame"></button>
+        <button type="button" data-copy="nav.3" data-nav="landing"></button>
+      </nav>
+      <div class="theme-toggle" role="group" aria-label="Pilih tema tampilan">
+        <button type="button" data-theme-set="retro">Retro</button>
+        <button type="button" data-theme-set="funky">Funky</button>
+      </div>
+      <button class="btn btn-ghost head-cta" type="button" data-copy="nav.start" data-nav="filter"></button>
+    </div>
+  </header>
+
+  <div class="landing-body">
+    <div class="hero-banner funky-decor" aria-hidden="true">
+      <span class="hero-banner-bolt">⚡</span>
+      <span class="hero-banner-title" data-text="SNAPSHOOT">SNAPSHOOT</span>
+      <span class="hero-banner-tag">STEP UP, STRIKE A POSE!</span>
+    </div>
+
+    <div class="hero-copy">
+      <p class="hero-kicker retro-decor" data-copy="hero.kicker"></p>
+      <h1 class="hero-title">
+        <span class="hero-title-ghost" aria-hidden="true"></span>
+        <span class="hero-title-main"></span>
+      </h1>
+      <p class="hero-sub" data-copy="hero.sub"></p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" type="button" data-copy="hero.cta" data-nav="filter"></button>
+        <button class="btn btn-ghost" type="button" data-copy="hero.ghost" data-nav="frame"></button>
+      </div>
+    </div>
+
+    <div class="hero-strips" aria-hidden="true">
+      <div class="hero-strip"><img alt="" id="hero-frame-1"></div>
+      <div class="hero-strip"><img alt="" id="hero-frame-2"></div>
+    </div>
+  </div>
+
+  <div class="page-foot foot-cta">
+    <button class="btn btn-primary btn-block" type="button" data-copy="hero.cta" data-nav="filter"></button>
+  </div>
+</section>
+
+<!-- pilih filter -->
+<section class="view view-filter" id="view-filter">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-filter">POP</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-star decor-star-b">✧</span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">←</button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="filter.step"></span>
+      <h2 class="page-title" data-copy="filter.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="filter.sub"></p>
+  </div>
+
+  <div class="page-body">
+    <div class="grid grid-filter" id="filter-grid"></div>
+  </div>
+
+  <div class="page-foot foot-bar">
+    <span class="foot-note" id="filter-note"></span>
+    <button class="btn btn-primary" type="button" data-copy="filter.next" data-nav="frame"></button>
+  </div>
+</section>
+
+<!-- pilih frame -->
+<section class="view view-frame" id="view-frame">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-frame">FRAME</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-checker"></span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="filter" aria-label="Kembali">←</button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="frame.step"></span>
+      <h2 class="page-title" data-copy="frame.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="frame.sub"></p>
+  </div>
+
+  <div class="page-body">
+    <div class="grid grid-frame" id="frame-grid"></div>
+  </div>
+
+  <div class="page-foot foot-bar">
+    <span class="foot-note" id="frame-note"></span>
+    <button class="btn btn-primary" type="button" data-copy="frame.next" data-nav="capture"></button>
+  </div>
+</section>
+
+<!-- capture -->
+<section class="view view-capture" id="view-capture">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-rays"></span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-star decor-star-b">✧</span>
+  </div>
+
+  <div class="capture-top">
+    <button class="round-btn round-btn-light" type="button" id="capture-back" data-nav="frame" aria-label="Keluar dari kamera">✕</button>
+    <span class="capture-count" id="capture-count"></span>
+    <span class="round-spacer"></span>
+  </div>
+
+  <div class="progress" id="capture-progress" aria-hidden="true"></div>
+
+  <div class="capture-body">
+    <div class="capture-main">
+      <div class="stage" id="capture-stage">
+        <video id="camera" playsinline autoplay muted></video>
+        <span class="stage-hint" id="stage-hint"></span>
+        <div class="countdown" id="countdown" hidden><span></span></div>
+        <div class="stage-flash" id="stage-flash"></div>
+        <div class="stage-thumbs" id="stage-thumbs"></div>
+      </div>
+
+      <div class="notice" id="panel-denied" hidden>
+        <span class="notice-sticker funky-decor">CEK<br>IZIN</span>
+        <div class="notice-icon"><span class="notice-icon-body"></span><span class="notice-icon-slash"></span></div>
+        <div>
+          <h2 class="notice-title" data-copy-html="denied.title"></h2>
+          <p class="notice-text" id="denied-text"></p>
+        </div>
+        <div class="notice-box">
+          <div class="notice-box-title" data-copy="denied.how"></div>
+          <div class="notice-box-text" id="denied-steps"></div>
+        </div>
+      </div>
+
+      <div class="notice" id="panel-upload" hidden>
+        <div class="notice-icon notice-icon-upload"><span>↑</span></div>
+        <div>
+          <h2 class="notice-title" data-copy-html="upload.title"></h2>
+          <p class="notice-text" data-copy="upload.text"></p>
+        </div>
+        <div class="upload-slots" id="upload-slots"></div>
+        <p class="upload-status" id="upload-status"></p>
+      </div>
+    </div>
+
+    <aside class="strip-panel" id="strip-panel">
+      <span class="step-badge" data-copy="capture.panel"></span>
+      <div class="strip-panel-slots" id="strip-panel-slots"></div>
+      <p class="strip-panel-note" id="strip-panel-note"></p>
+    </aside>
+  </div>
+
+  <div class="capture-controls" id="capture-controls">
+    <button class="round-btn round-btn-soft" type="button" id="timer-btn">3s</button>
+    <button class="shutter" type="button" id="shutter"><span>SNAP!</span></button>
+    <button class="round-btn round-btn-accent" type="button" id="reset-btn" aria-label="Ulangi dari foto pertama">↺</button>
+  </div>
+
+  <div class="page-foot capture-foot" id="denied-actions" hidden>
+    <button class="btn btn-primary btn-block" type="button" id="retry-camera" data-copy="denied.retry"></button>
+    <button class="btn btn-outline btn-block" type="button" id="open-upload" data-copy="denied.upload"></button>
+  </div>
+
+  <div class="page-foot capture-foot" id="upload-actions" hidden>
+    <label class="btn btn-primary btn-block" for="upload-input" data-copy="upload.pick"></label>
+    <input type="file" id="upload-input" accept="image/*" multiple hidden>
+    <button class="btn btn-outline btn-block" type="button" id="upload-back" data-copy="upload.back"></button>
+  </div>
+</section>
+
+<!-- hasil -->
+<section class="view view-result" id="view-result">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-result">YAY</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-star decor-star-b">✧</span>
+    <span class="decor-dots decor-dots-a"></span>
+  </div>
+
+  <div class="result-body">
+    <div class="result-preview">
+      <div class="result-strip">
+        <span class="result-sticker funky-decor">SNAP<br>CO.</span>
+        <canvas id="result-canvas" width="600" height="1800" aria-label="Strip foto hasil"></canvas>
+      </div>
+    </div>
+
+    <div class="result-copy">
+      <div class="result-head">
+        <span class="pill" data-copy="result.pill"></span>
+        <h2 class="result-title" data-copy="result.title"></h2>
+      </div>
+
+      <div class="result-detail">
+        <span class="result-detail-label" data-copy="result.detailLabel"></span>
+        <p id="result-detail-text"></p>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn btn-primary" type="button" id="download-btn" data-copy="result.download"></button>
+        <div class="result-actions-row">
+          <button class="btn btn-secondary" type="button" id="share-btn" data-copy="result.share"></button>
+          <button class="btn btn-ghost" type="button" id="again-btn" data-copy="result.again"></button>
+        </div>
+      </div>
+
+      <p class="result-note retro-decor" data-copy="result.note"></p>
+      <p class="result-status" id="result-status" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/compositing.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
