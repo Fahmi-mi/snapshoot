@@ -495,3 +495,34 @@
   [data-theme="funky"] .result-actions { margin-top: 0; border-top: 0; }
   [data-theme="funky"] .result-actions::before { display: none; }
 }
+
+/* landing funky di hp & tablet: banner jadi judul tunggal */
+@media (max-width: 1079px) {
+  [data-theme="funky"] {
+    --hero-gap: 24px;
+    --hero-sub-size: 16px;
+    --hero-sub-width: 38ch;
+  }
+  [data-theme="funky"] .hero-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  [data-theme="funky"] .hero-sub { margin-top: 0; }
+  [data-theme="funky"] .hero-strip img { height: min(42vh, 400px, calc(100cqh - 16px)); }
+  [data-theme="funky"] .decor-word-landing { top: 44%; opacity: .09; }
+}
+
+@media (max-width: 719px) {
+  [data-theme="funky"] .view-landing .decor-star,
+  [data-theme="funky"] .view-landing .decor-dots { display: none; }
+}
+
+@media (min-width: 720px) and (max-width: 1079px) {
+  [data-theme="funky"] { --hero-gap: 30px; }
+  [data-theme="funky"] .hero-strip img { height: min(52vh, 560px, calc(100cqh - 16px)); }
+}
