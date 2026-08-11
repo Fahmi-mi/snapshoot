@@ -461,7 +461,7 @@ label.btn { cursor: pointer; }
 .result-detail { order: 3; display: none; }
 .result-actions { order: 4; display: flex; flex-direction: column; gap: 10px; padding: 14px var(--pad) var(--foot-bottom); margin: 0 calc(var(--pad) * -1); background: var(--foot-cta-bg); }
 .result-actions-row { display: flex; gap: 10px; }
-.result-actions .btn { flex: 1; }
+.result-actions .btn { flex: 1; white-space: nowrap; }
 .result-actions > .btn { width: 100%; padding: var(--btn-pad-block); font-size: var(--btn-size-block); }
 .result-note { order: 5; display: none; }
 .result-status { order: 6; text-align: center; font-size: 13px; color: var(--muted); padding: 10px var(--pad) 16px; }
@@ -490,7 +490,11 @@ label.btn { cursor: pointer; }
   .capture-foot .btn { flex: 1; width: auto; }
 
   .result-strip canvas { max-height: min(52vh, 100cqh); max-width: 40vw; }
-  .result-actions { flex-direction: row; max-width: 560px; margin: 0 auto; }
+  .result-actions {
+    flex-direction: row;
+    padding-left: max(var(--pad), calc((100% - 560px) / 2 + var(--pad)));
+    padding-right: max(var(--pad), calc((100% - 560px) / 2 + var(--pad)));
+  }
   .result-actions > .btn { width: auto; flex: 1; }
   .result-actions-row { flex: 2; }
 }
