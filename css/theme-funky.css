@@ -113,7 +113,6 @@
   --filter-preview-h: 100px;
   --filter-preview-radius: 8px 8px 0 0;
   --filter-label-gap: 0px;
-  --frame-thumb-w: 116px;
   --frame-thumb-shadow: drop-shadow(4px 4px 0 #1F6BFF);
   --frame-outline: 3px solid #FF1F8F;
 
@@ -451,7 +450,6 @@
     --shutter-size: 104px;
     --filter-preview-h: 118px;
     --card-label-size: 15px;
-    --frame-thumb-w: 150px;
     --countdown-size: 150px;
     --thumb-w: 74px;
     --thumb-h: 96px;

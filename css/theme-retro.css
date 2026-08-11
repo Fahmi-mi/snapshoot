@@ -107,7 +107,6 @@
   --filter-preview-h: 112px;
   --filter-preview-radius: 14px;
   --filter-label-gap: 8px;
-  --frame-thumb-w: 118px;
   --frame-thumb-shadow: none;
   --frame-outline: 3px solid #D96B45;
 
@@ -254,7 +253,6 @@
     --shutter-size: 104px;
     --filter-preview-h: 132px;
     --card-label-size: 15px;
-    --frame-thumb-w: 150px;
     --countdown-circle: 180px;
     --countdown-size: 100px;
     --thumb-w: 74px;
