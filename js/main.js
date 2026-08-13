@@ -192,7 +192,6 @@ function renderHero() {
 
 // halaman capture
 function enterCapture() {
-  if (state.photos.length >= PHOTO_COUNT) resetSession();
   setCaptureMode('camera');
   requestCamera();
 }
@@ -229,6 +228,7 @@ function setCaptureMode(mode) {
 function updateCaptureUI() {
   const taken = state.photos.length;
   const index = Math.min(taken + 1, PHOTO_COUNT);
+  const full = taken >= PHOTO_COUNT;
   el.captureCount.textContent = state.captureMode === 'denied'
     ? copy('denied.head')
     : 'Foto ' + index + ' dari ' + PHOTO_COUNT;
@@ -247,6 +247,8 @@ function updateCaptureUI() {
 
   el.stripPanelNote.textContent = 'frame ' + activeFrame().name;
   el.timerBtn.textContent = state.timerSeconds ? state.timerSeconds + 's' : 'off';
+  el.shutter.disabled = full;
+  el.captureNext.hidden = !full || state.captureMode !== 'camera';
   syncRetakeBtn();
   el.uploadStatus.textContent = taken === 0
     ? 'Belum ada foto dipilih. Butuh ' + PHOTO_COUNT + ' foto.'
@@ -330,13 +332,6 @@ function addPhoto(canvas) {
   state.photos.push(canvas);
   updateCaptureUI();
   state.busy = false;
-
-  if (state.photos.length >= PHOTO_COUNT) {
-    setTimeout(function () {
-      Camera.stop();
-      go('filter');
-    }, 600);
-  }
 }
 
 function resetSession() {
@@ -466,6 +461,8 @@ function cacheElements() {
   el.stripPanelNote = $('strip-panel-note');
   el.timerBtn = $('timer-btn');
   el.resetBtn = $('reset-btn');
+  el.shutter = $('shutter');
+  el.captureNext = $('capture-next');
   el.resultCanvas = $('result-canvas');
   el.resultDetailText = $('result-detail-text');
   el.resultStatus = $('result-status');
@@ -478,7 +475,7 @@ function bindEvents() {
     });
   });
 
-  $('shutter').addEventListener('click', triggerShutter);
+  el.shutter.addEventListener('click', triggerShutter);
   el.resetBtn.addEventListener('click', retakeLast);
   $('retry-camera').addEventListener('click', requestCamera);
   $('open-upload').addEventListener('click', function () { setCaptureMode('upload'); });

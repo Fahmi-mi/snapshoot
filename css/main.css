@@ -312,6 +312,9 @@ label.btn { cursor: pointer; }
 /* capture */
 .view-capture { background: var(--capture-bg); color: var(--on-capture); }
 .capture-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px var(--pad) 0; }
+.capture-next { padding: 10px 20px; font-size: 15px; }
+.capture-next[hidden] { display: none; }
+.capture-top:has(.capture-next:not([hidden])) .round-spacer { display: none; }
 .capture-count {
   font-family: var(--count-font);
   font-weight: var(--count-weight);
@@ -398,6 +401,7 @@ label.btn { cursor: pointer; }
   color: var(--shutter-ink);
 }
 .shutter span { display: var(--shutter-label); }
+.shutter:disabled { filter: grayscale(1); opacity: .5; cursor: default; }
 
 .capture-foot { background: var(--capture-foot-bg); }
 
