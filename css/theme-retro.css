@@ -263,6 +263,11 @@
   [data-theme="retro"] .hero-strip:last-child { display: inline-block; }
 }
 
+@media (max-width: 1079px) {
+  [data-theme="retro"] .brand { display: none; }
+  [data-theme="retro"] .hero-brand { display: block; }
+}
+
 @media (min-width: 720px) and (max-width: 1079px) {
   [data-theme="retro"] .head-nav { display: none; }
 }

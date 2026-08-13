@@ -151,6 +151,15 @@ label.btn { cursor: pointer; }
   padding: 8px var(--pad) 6px;
 }
 .hero-copy { display: flex; flex-direction: column; align-items: var(--hero-align); text-align: var(--hero-text-align); }
+.hero-brand {
+  display: none;
+  font-family: var(--brand-font);
+  font-weight: var(--brand-weight);
+  font-size: 15px;
+  letter-spacing: var(--brand-tracking);
+  color: var(--brand-ink);
+  margin-bottom: 10px;
+}
 .hero-kicker { font-family: var(--font-accent); font-weight: 600; font-size: 26px; line-height: 1; color: var(--select); }
 .hero-title {
   position: relative;
@@ -489,6 +498,7 @@ label.btn { cursor: pointer; }
   .hero-strip img { height: min(34vh, 340px, calc(100cqh - 16px)); }
   .hero-strips { gap: 26px; }
   .hero-copy { align-items: center; text-align: center; }
+  .hero-brand { font-size: 16px; margin-bottom: 12px; }
   .hero-sub { max-width: 44ch; }
 
   .step-head { padding-top: 14px; gap: 8px 14px; }
