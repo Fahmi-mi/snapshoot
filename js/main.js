@@ -184,7 +184,7 @@ function renderFrames() {
   el.frameNote.textContent = activeFrame().name;
 }
 
-// halaman cara pakai, galeri frame, tentang
+// halaman cara pakai, galeri frame, contoh, tentang
 function renderHowto() {
   el.howtoSteps.innerHTML = '';
   howtoByTheme[getTheme()].forEach(function (step, index) {
@@ -235,6 +235,42 @@ function renderFrameGallery() {
     card.appendChild(thumb);
     card.appendChild(label);
     el.frameGallery.appendChild(card);
+  });
+}
+
+function renderExamples() {
+  const list = examplesByTheme[getTheme()];
+
+  el.exampleGallery.innerHTML = '';
+  el.exampleGallery.hidden = !list.length;
+  el.exampleEmpty.hidden = list.length > 0;
+
+  list.forEach(function (example) {
+    const card = document.createElement('figure');
+    card.className = 'example-card';
+
+    const shot = document.createElement('img');
+    shot.src = example.src;
+    shot.alt = 'Contoh strip ' + example.name;
+    shot.loading = 'lazy';
+
+    const caption = document.createElement('figcaption');
+    const name = document.createElement('span');
+    name.className = 'example-name';
+    name.textContent = example.name;
+    caption.appendChild(name);
+
+    const detail = [example.frame, example.filter].filter(Boolean);
+    if (detail.length) {
+      const note = document.createElement('span');
+      note.className = 'example-note';
+      note.textContent = detail.join(' · ');
+      caption.appendChild(note);
+    }
+
+    card.appendChild(shot);
+    card.appendChild(caption);
+    el.exampleGallery.appendChild(card);
   });
 }
 
@@ -513,6 +549,8 @@ function cacheElements() {
   el.frameNote = $('frame-note');
   el.howtoSteps = $('howto-steps');
   el.frameGallery = $('frame-gallery');
+  el.exampleGallery = $('example-gallery');
+  el.exampleEmpty = $('example-empty');
   el.aboutText = $('about-text');
   el.aboutHighlights = $('about-highlights');
   el.heroFrame1 = $('hero-frame-1');
@@ -590,6 +628,7 @@ function bindEvents() {
     renderHero();
     renderHowto();
     renderFrameGallery();
+    renderExamples();
     renderAbout();
     updateCaptureUI();
   });
@@ -607,6 +646,7 @@ function init() {
   renderHero();
   renderHowto();
   renderFrameGallery();
+  renderExamples();
   renderAbout();
   updateCaptureUI();
   showView('landing');

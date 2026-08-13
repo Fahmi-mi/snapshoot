@@ -295,6 +295,35 @@ label.btn { cursor: pointer; }
   border-radius: var(--radius-stage);
   box-shadow: var(--shadow-ghost);
 }
+.example-gallery { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(2, 1fr); }
+.example-gallery[hidden] { display: none; }
+.example-card { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.example-card img { width: 100%; border-radius: var(--filter-preview-radius); filter: var(--strip-shadow); }
+.example-card figcaption { display: flex; flex-direction: column; gap: 2px; }
+.example-name {
+  font-family: var(--card-label-font);
+  font-weight: var(--card-label-weight);
+  font-size: var(--card-label-size);
+  text-transform: var(--card-label-transform);
+  color: var(--ink);
+}
+.example-note { font-size: 13px; color: var(--muted); }
+.empty-state {
+  padding: 30px 24px;
+  border: 2px dashed var(--upload-slot-border, var(--muted));
+  border-radius: var(--radius-stage);
+  text-align: center;
+}
+.empty-state[hidden] { display: none; }
+.empty-state h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: 21px;
+  text-transform: var(--title-transform);
+  color: var(--ink);
+}
+.empty-state p { font-size: 15px; line-height: 1.6; color: var(--muted); }
 .frame-gallery { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(2, 1fr); }
 .frame-gallery .frame-card { margin: 0; }
 .frame-gallery .frame-thumb { width: 100%; }
@@ -583,7 +612,8 @@ label.btn { cursor: pointer; }
   .page-sub { margin-top: 8px; }
 
   .grid-filter, .grid-frame { grid-template-columns: repeat(3, 1fr); gap: 26px; }
-  .frame-gallery { grid-template-columns: repeat(3, 1fr); }
+  .frame-gallery, .example-gallery { grid-template-columns: repeat(3, 1fr); }
+  .empty-state { padding: 40px 32px; }
   .steps, .info-cards { grid-template-columns: repeat(2, 1fr); }
   .step-card, .info-card { padding: 22px; }
 
@@ -617,7 +647,10 @@ label.btn { cursor: pointer; }
   .page-title { margin-top: 0; }
   .page-sub { margin: 0 0 0 auto; text-align: right; max-width: 38ch; }
 
-  .frame-gallery { grid-template-columns: repeat(6, 1fr); }
+  .frame-gallery, .example-gallery { grid-template-columns: repeat(6, 1fr); }
+  .empty-state { max-width: 620px; margin: 12px auto 0; padding: 48px 40px; }
+  .empty-state h3 { font-size: 26px; }
+  .empty-state p { font-size: 16.5px; }
   .info-body { padding-bottom: 34px; }
   .info-inner { max-width: none; }
   .view-howto .info-body, .view-about .info-body { display: flex; flex-direction: column; }

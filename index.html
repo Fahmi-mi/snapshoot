@@ -64,7 +64,7 @@
       <p class="hero-sub" data-copy="hero.sub"></p>
       <div class="hero-actions">
         <button class="btn btn-primary" type="button" data-copy="hero.cta" data-nav="frame"></button>
-        <button class="btn btn-ghost" type="button" data-copy="hero.ghost" data-nav="frame"></button>
+        <button class="btn btn-ghost" type="button" data-copy="hero.ghost" data-nav="examples"></button>
       </div>
     </div>
 
@@ -127,6 +127,34 @@
 
   <div class="info-body">
     <div class="frame-gallery" id="frame-gallery"></div>
+  </div>
+</section>
+
+<!-- contoh strip -->
+<section class="view view-examples" id="view-examples">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-examples">YAY</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-dots decor-dots-a"></span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">
+      <svg class="icon-back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12H3.5M10.5 5.5 3.5 12l7 6.5"/></svg>
+    </button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="examples.badge"></span>
+      <h2 class="page-title" data-copy="examples.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="examples.sub"></p>
+  </div>
+
+  <div class="info-body">
+    <div class="example-gallery" id="example-gallery"></div>
+    <div class="empty-state" id="example-empty" hidden>
+      <h3 data-copy="examples.emptyTitle"></h3>
+      <p data-copy="examples.emptyText"></p>
+    </div>
   </div>
 </section>
 
@@ -340,6 +368,7 @@
 
 <script src="js/data.js"></script>
 <script src="js/frames.generated.js"></script>
+<script src="js/examples.generated.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/compositing.js"></script>
 <script src="js/camera.js"></script>
