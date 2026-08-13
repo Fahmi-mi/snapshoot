@@ -265,6 +265,10 @@
   [data-theme="retro"] .hero-strip:last-child { display: inline-block; }
 }
 
+@media (min-width: 720px) and (max-width: 1079px) {
+  [data-theme="retro"] .head-nav { display: none; }
+}
+
 @media (min-width: 1080px) {
   [data-theme="retro"] {
     --pad: 56px;
