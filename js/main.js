@@ -184,6 +184,86 @@ function renderFrames() {
   el.frameNote.textContent = activeFrame().name;
 }
 
+// halaman cara pakai, galeri frame, tentang
+function renderHowto() {
+  el.howtoSteps.innerHTML = '';
+  howtoByTheme[getTheme()].forEach(function (step, index) {
+    const item = document.createElement('li');
+    item.className = 'step-card';
+
+    const num = document.createElement('span');
+    num.className = 'step-card-num';
+    num.textContent = String(index + 1);
+
+    const body = document.createElement('div');
+    const title = document.createElement('h3');
+    title.textContent = step.title;
+    const text = document.createElement('p');
+    text.textContent = step.text;
+
+    body.appendChild(title);
+    body.appendChild(text);
+    item.appendChild(num);
+    item.appendChild(body);
+    el.howtoSteps.appendChild(item);
+  });
+}
+
+function renderFrameGallery() {
+  el.frameGallery.innerHTML = '';
+  currentFrames().forEach(function (frame) {
+    const card = document.createElement('figure');
+    card.className = 'card frame-card';
+
+    const thumb = document.createElement('span');
+    thumb.className = 'frame-thumb';
+
+    const fill = document.createElement('span');
+    fill.className = 'frame-thumb-fill';
+
+    const image = document.createElement('img');
+    image.src = frame.src;
+    image.alt = '';
+    image.loading = 'lazy';
+
+    const label = document.createElement('figcaption');
+    label.className = 'card-label';
+    label.textContent = frame.name;
+
+    thumb.appendChild(fill);
+    thumb.appendChild(image);
+    card.appendChild(thumb);
+    card.appendChild(label);
+    el.frameGallery.appendChild(card);
+  });
+}
+
+function renderAbout() {
+  const about = aboutByTheme[getTheme()];
+
+  el.aboutText.innerHTML = '';
+  about.text.forEach(function (paragraph) {
+    const node = document.createElement('p');
+    node.textContent = paragraph;
+    el.aboutText.appendChild(node);
+  });
+
+  el.aboutHighlights.innerHTML = '';
+  about.cards.forEach(function (card) {
+    const box = document.createElement('div');
+    box.className = 'info-card';
+
+    const title = document.createElement('h3');
+    title.textContent = card.title;
+    const text = document.createElement('p');
+    text.textContent = card.text;
+
+    box.appendChild(title);
+    box.appendChild(text);
+    el.aboutHighlights.appendChild(box);
+  });
+}
+
 function renderHero() {
   const frames = currentFrames();
   el.heroFrame1.src = frames[0].src;
@@ -344,7 +424,6 @@ function syncRetakeBtn() {
   el.resetBtn.disabled = !state.photos.length && !state.busy;
 }
 
-// batalkan hitung mundur, atau hapus foto terakhir
 function retakeLast() {
   if (state.busy) {
     stopCountdown();
@@ -432,6 +511,10 @@ function cacheElements() {
   el.frameGrid = $('frame-grid');
   el.filterNote = $('filter-note');
   el.frameNote = $('frame-note');
+  el.howtoSteps = $('howto-steps');
+  el.frameGallery = $('frame-gallery');
+  el.aboutText = $('about-text');
+  el.aboutHighlights = $('about-highlights');
   el.heroFrame1 = $('hero-frame-1');
   el.heroFrame2 = $('hero-frame-2');
   el.heroTitle = document.querySelector('.hero-title-main');
@@ -505,6 +588,9 @@ function bindEvents() {
     renderFilters();
     renderFrames();
     renderHero();
+    renderHowto();
+    renderFrameGallery();
+    renderAbout();
     updateCaptureUI();
   });
 
@@ -519,6 +605,9 @@ function init() {
   renderFilters();
   renderFrames();
   renderHero();
+  renderHowto();
+  renderFrameGallery();
+  renderAbout();
   updateCaptureUI();
   showView('landing');
 }

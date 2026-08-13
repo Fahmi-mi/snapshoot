@@ -253,6 +253,9 @@
 [data-theme="funky"] .decor-word-filter { top: 22%; right: -4%; color: var(--decor-pink); opacity: .14; }
 [data-theme="funky"] .decor-word-frame { top: 24%; left: -3%; color: var(--decor-yellow); opacity: .18; }
 [data-theme="funky"] .decor-word-result { top: 34%; left: -6%; color: var(--decor-green); opacity: .16; }
+[data-theme="funky"] .decor-word-howto { top: 30%; right: -6%; color: var(--decor-blue); opacity: .12; }
+[data-theme="funky"] .decor-word-frames { top: 26%; left: -4%; color: var(--decor-pink); opacity: .12; }
+[data-theme="funky"] .decor-word-about { top: 32%; right: -4%; color: var(--decor-green); opacity: .14; }
 [data-theme="funky"] .decor-star { position: absolute; font-size: 22px; }
 [data-theme="funky"] .decor-star-a { top: 22%; left: 4%; color: var(--decor-yellow); }
 [data-theme="funky"] .decor-star-b { bottom: 26%; right: 5%; color: var(--decor-green); }
@@ -384,6 +387,8 @@
   border-bottom: 2px solid #1C1C1E;
 }
 
+[data-theme="funky"] .step-card-num { box-shadow: 3px 3px 0 #1C1C1E; }
+[data-theme="funky"] .info-note { background: #FFFFFF; box-shadow: 4px 4px 0 #1C1C1E; }
 [data-theme="funky"] .filter-card .card-label {
   padding: 7px 10px;
   border: 3px solid #1C1C1E;
@@ -498,7 +503,7 @@
   [data-theme="funky"] .result-actions::before { display: none; }
 }
 
-/* landing funky di hp & tablet: banner jadi judul tunggal */
+/* landing funky di hp & tablet */
 @media (max-width: 1079px) {
   [data-theme="funky"] {
     --hero-gap: 24px;

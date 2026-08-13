@@ -35,9 +35,9 @@
     <button class="brand" type="button" data-nav="landing">SNAPSHOOT</button>
     <div class="head-right">
       <nav class="head-nav">
-        <button type="button" data-copy="nav.1" data-nav="frame"></button>
-        <button type="button" data-copy="nav.2" data-nav="frame"></button>
-        <button type="button" data-copy="nav.3" data-nav="landing"></button>
+        <button type="button" data-copy="nav.1" data-nav="howto"></button>
+        <button type="button" data-copy="nav.2" data-nav="frames"></button>
+        <button type="button" data-copy="nav.3" data-nav="about"></button>
       </nav>
       <div class="theme-toggle" role="group" aria-label="Pilih tema tampilan">
         <button type="button" data-theme-set="retro">Retro</button>
@@ -76,6 +76,84 @@
 
   <div class="page-foot foot-cta">
     <button class="btn btn-primary btn-block" type="button" data-copy="hero.cta" data-nav="frame"></button>
+  </div>
+</section>
+
+<!-- cara pakai -->
+<section class="view view-howto" id="view-howto">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-howto">HOW</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-dots decor-dots-a"></span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">
+      <svg class="icon-back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12H3.5M10.5 5.5 3.5 12l7 6.5"/></svg>
+    </button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="howto.badge"></span>
+      <h2 class="page-title" data-copy="howto.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="howto.sub"></p>
+  </div>
+
+  <div class="info-body">
+    <div class="info-inner">
+      <ol class="steps" id="howto-steps"></ol>
+      <p class="info-note" data-copy="howto.note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- galeri frame -->
+<section class="view view-frames" id="view-frames">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-frames">FRAME</span>
+    <span class="decor-star decor-star-b">✧</span>
+    <span class="decor-checker"></span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">
+      <svg class="icon-back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12H3.5M10.5 5.5 3.5 12l7 6.5"/></svg>
+    </button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="frames.badge"></span>
+      <h2 class="page-title" data-copy="frames.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="frames.sub"></p>
+  </div>
+
+  <div class="info-body">
+    <div class="frame-gallery" id="frame-gallery"></div>
+  </div>
+</section>
+
+<!-- tentang -->
+<section class="view view-about" id="view-about">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-about">HAI</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-star decor-star-b">✧</span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">
+      <svg class="icon-back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12H3.5M10.5 5.5 3.5 12l7 6.5"/></svg>
+    </button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="about.badge"></span>
+      <h2 class="page-title" data-copy="about.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="about.sub"></p>
+  </div>
+
+  <div class="info-body">
+    <div class="info-inner">
+      <div class="about-text" id="about-text"></div>
+      <div class="info-cards" id="about-highlights"></div>
+    </div>
   </div>
 </section>
 

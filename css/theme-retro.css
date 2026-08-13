@@ -238,6 +238,8 @@
 /* penanda pilihan gaya retro */
 [data-theme="retro"] .frame-card.is-selected .frame-thumb { outline: none; filter: drop-shadow(0 6px 16px rgba(217, 107, 69, .4)); }
 [data-theme="retro"] .strip-panel .step-badge { color: #66755B; }
+[data-theme="retro"] .step-card, [data-theme="retro"] .info-card { box-shadow: 0 8px 20px rgba(74, 55, 40, .06); }
+[data-theme="retro"] .info-note { background: #FBF6EC; }
 [data-theme="retro"] .btn-primary:hover { background: #C25C39; }
 [data-theme="retro"] .btn-ghost:hover { background: rgba(43, 35, 32, .06); }
 [data-theme="retro"] .hero-strip:last-child { display: none; }
