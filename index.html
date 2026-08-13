@@ -122,8 +122,10 @@
       <span class="icon-close">✕</span>
     </button>
     <span class="capture-count" id="capture-count"></span>
-    <span class="round-spacer"></span>
-    <button class="btn btn-primary capture-next" type="button" id="capture-next" data-copy="capture.next" data-nav="filter" hidden></button>
+    <button class="btn btn-primary capture-next" type="button" id="capture-next" data-nav="filter" hidden>
+      <svg class="icon-next" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12h17.5M13.5 5.5 20.5 12l-7 6.5"/></svg>
+      <span data-copy="capture.next"></span>
+    </button>
   </div>
 
   <div class="progress" id="capture-progress" aria-hidden="true"></div>
