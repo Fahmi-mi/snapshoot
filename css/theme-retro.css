@@ -109,13 +109,13 @@
   --frame-thumb-shadow: none;
   --frame-outline: 3px solid #D96B45;
 
-  --check-size: 24px;
+  --check-size: 30px;
   --check-top: 8px;
   --check-right: 8px;
   --check-border: 0;
   --check-rotate: 0deg;
   --check-font: 'Nunito', sans-serif;
-  --check-font-size: 13px;
+  --check-font-size: 15px;
 
   --photo-placeholder:
     radial-gradient(circle at 28% 26%, rgba(255, 226, 196, .95) 0 22%, transparent 22.5%),
@@ -232,8 +232,6 @@
 }
 
 /* penanda pilihan gaya retro */
-[data-theme="retro"] .frame-card .card-check { display: none; }
-[data-theme="retro"] .frame-card.is-selected .card-label::after { content: ' ✓'; }
 [data-theme="retro"] .frame-card.is-selected .frame-thumb { outline: none; filter: drop-shadow(0 6px 16px rgba(217, 107, 69, .4)); }
 [data-theme="retro"] .strip-panel .step-badge { color: #66755B; }
 [data-theme="retro"] .btn-primary:hover { background: #C25C39; }
@@ -251,6 +249,8 @@
     --ctrl-size: 56px;
     --shutter-size: 104px;
     --card-label-size: 15px;
+    --check-size: 34px;
+    --check-font-size: 17px;
     --countdown-circle: 180px;
     --countdown-size: 100px;
     --thumb-w: 74px;
