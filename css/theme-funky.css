@@ -488,6 +488,7 @@
     --brand-pad: 0;
     --brand-shadow: none;
   }
+  [data-theme="funky"] .site-head { padding-top: 24px; }
   [data-theme="funky"] .brand { display: block; }
   [data-theme="funky"] .head-nav { display: flex; }
   [data-theme="funky"] .hero-banner { display: none; }

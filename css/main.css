@@ -633,6 +633,7 @@ label.btn { cursor: pointer; }
 }
 
 @media (min-width: 1080px) {
+  .site-head { padding-top: 26px; }
   .head-cta { display: inline-flex; }
   .landing-body { flex-direction: row; align-items: center; gap: 48px; padding-bottom: 40px; }
   .hero-copy { flex: 1; align-items: flex-start; text-align: left; }
