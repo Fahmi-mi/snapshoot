@@ -525,4 +525,5 @@
 @media (min-width: 720px) and (max-width: 1079px) {
   [data-theme="funky"] { --hero-gap: 30px; }
   [data-theme="funky"] .hero-strip img { height: min(52vh, 560px, calc(100cqh - 16px)); }
+  [data-theme="funky"] .capture-controls { padding-top: 28px; }
 }
