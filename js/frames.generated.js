@@ -1,4 +1,4 @@
-// Dibuat otomatis oleh tools/sync-frames.mjs — jangan diedit manual.
+// Dibuat otomatis oleh tools/sync-frames.mjs. Jangan diedit manual.
 const framesByTheme = {
   "retro": [
     {

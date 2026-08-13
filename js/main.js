@@ -74,7 +74,6 @@ function showView(view) {
   document.body.setAttribute('data-view', view);
 }
 
-// contoh foto untuk kartu filter
 function filterSample() {
   const photo = state.photos[0];
   if (!photo) return null;
@@ -184,7 +183,7 @@ function renderFrames() {
   el.frameNote.textContent = activeFrame().name;
 }
 
-// halaman cara pakai, galeri frame, contoh, tentang
+// halaman info
 function renderHowto() {
   el.howtoSteps.innerHTML = '';
   howtoByTheme[getTheme()].forEach(function (step, index) {

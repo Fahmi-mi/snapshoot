@@ -124,14 +124,12 @@ function composeStrip(target, photos, frame, cssFilter) {
   target.height = CANVAS_SIZE.height;
   ctx.clearRect(0, 0, target.width, target.height);
 
-  // layer 1: foto hasil capture
   PHOTO_SLOTS.forEach(function (slot, index) {
     const photo = photos[index];
     if (!photo) return;
     drawFiltered(ctx, photo, slot.x, slot.y, slot.width, slot.height, cssFilter);
   });
 
-  // layer 2: frame overlay
   return loadFrameImage(frame.src).then(function (image) {
     ctx.drawImage(image, 0, 0, target.width, target.height);
     drawCaption(ctx, frame.caption);

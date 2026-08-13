@@ -110,7 +110,7 @@ THEMES.forEach(function (theme) {
 
 writeFileSync(CONFIG_PATH, JSON.stringify(nextConfig, null, 2) + '\n');
 writeFileSync(OUTPUT_PATH,
-  '// Dibuat otomatis oleh tools/sync-frames.mjs — jangan diedit manual.\n' +
+  '// Dibuat otomatis oleh tools/sync-frames.mjs. Jangan diedit manual.\n' +
   'const framesByTheme = ' + JSON.stringify(generated, null, 2) + ';\n');
 
 report.added.forEach(function (item) { console.log('+ ' + item); });
