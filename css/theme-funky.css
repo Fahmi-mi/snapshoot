@@ -148,6 +148,10 @@
   --round-light-bg: #FFFFFF;
   --round-light-ink: #1C1C1E;
 
+  --icon-stroke: 3.4px;
+  --icon-cap: square;
+  --icon-join: miter;
+
   --ctrl-size: 56px;
   --ctrl-bw: 3px;
   --ctrl-bc: #1C1C1E;

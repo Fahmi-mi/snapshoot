@@ -142,6 +142,10 @@
   --round-light-bg: transparent;
   --round-light-ink: #F7EFE1;
 
+  --icon-stroke: 2.2px;
+  --icon-cap: round;
+  --icon-join: round;
+
   --ctrl-size: 52px;
   --ctrl-bw: 0px;
   --ctrl-bc: transparent;

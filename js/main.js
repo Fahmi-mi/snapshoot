@@ -220,7 +220,7 @@ function setCaptureMode(mode) {
   el.panelUpload.hidden = mode !== 'upload';
   el.captureControls.hidden = mode !== 'camera';
   el.stripPanel.hidden = mode !== 'camera';
-  el.captureBack.textContent = mode === 'camera' ? '✕' : '←';
+  el.captureBack.classList.toggle('is-close', mode === 'camera');
   el.deniedActions.hidden = mode !== 'denied';
   el.uploadActions.hidden = mode !== 'upload';
   updateCaptureUI();

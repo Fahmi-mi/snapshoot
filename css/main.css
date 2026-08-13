@@ -70,6 +70,17 @@ label.btn { cursor: pointer; }
   align-items: center;
   justify-content: center;
 }
+.icon-back {
+  width: 62%;
+  height: 62%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: var(--icon-cap);
+  stroke-linejoin: var(--icon-join);
+}
+.round-btn.is-close .icon-back { display: none; }
+.round-btn:not(.is-close) .icon-close { display: none; }
 .round-spacer { width: var(--round-size); flex: 0 0 var(--round-size); }
 .round-btn-light { border-color: var(--round-light-bc); background: var(--round-light-bg); color: var(--round-light-ink); }
 .round-btn-soft {
