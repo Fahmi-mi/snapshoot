@@ -234,7 +234,6 @@ label.btn { cursor: pointer; }
   text-transform: var(--title-transform);
   color: var(--ink);
 }
-.page-sub { grid-column: 1 / -1; margin-top: 6px; font-size: var(--sub-size); line-height: 1.5; color: var(--muted); }
 
 .page-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: var(--grid-top) var(--pad) 18px; }
 
@@ -609,7 +608,6 @@ label.btn { cursor: pointer; }
 
   .step-head { padding-top: 14px; gap: 8px 14px; }
   .page-title { margin-top: 14px; }
-  .page-sub { margin-top: 8px; }
 
   .grid-filter, .grid-frame { grid-template-columns: repeat(3, 1fr); gap: 26px; }
   .frame-gallery, .example-gallery { grid-template-columns: repeat(3, 1fr); }
@@ -645,7 +643,6 @@ label.btn { cursor: pointer; }
   .step-head { display: flex; align-items: center; gap: 18px; padding-top: 24px; }
   .step-head-text { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
   .page-title { margin-top: 0; }
-  .page-sub { margin: 0 0 0 auto; text-align: right; max-width: 38ch; }
 
   .frame-gallery, .example-gallery { grid-template-columns: repeat(6, 1fr); }
   .empty-state { max-width: 620px; margin: 12px auto 0; padding: 48px 40px; }

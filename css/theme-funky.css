@@ -90,7 +90,6 @@
   --hero-sub-size: 15px;
   --hero-sub-width: 32ch;
   --page-title-size: 34px;
-  --sub-size: 14px;
 
   --badge-font: 'Work Sans', sans-serif;
   --badge-weight: 800;
@@ -452,7 +451,6 @@
     --hero-sub-size: 17px;
     --hero-sub-width: 44ch;
     --page-title-size: 46px;
-    --sub-size: 16px;
     --badge-size: 12px;
     --badge-pad: 6px 16px;
     --round-size: 46px;
