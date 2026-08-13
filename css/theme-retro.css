@@ -104,7 +104,6 @@
   --card-border: 1px solid rgba(74, 55, 40, .12);
   --card-border-selected: 3px solid #D96B45;
   --filter-selected-shadow: none;
-  --filter-preview-h: 112px;
   --filter-preview-radius: 14px;
   --filter-label-gap: 8px;
   --frame-thumb-shadow: none;
@@ -251,7 +250,6 @@
     --round-size: 42px;
     --ctrl-size: 56px;
     --shutter-size: 104px;
-    --filter-preview-h: 132px;
     --card-label-size: 15px;
     --countdown-circle: 180px;
     --countdown-size: 100px;

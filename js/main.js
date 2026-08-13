@@ -62,6 +62,7 @@ function go(view) {
   }
   state.view = view;
   showView(view);
+  if (view === 'filter') renderFilters();
   if (view === 'result') renderResult();
   window.scrollTo(0, 0);
 }
@@ -73,12 +74,26 @@ function showView(view) {
   document.body.setAttribute('data-view', view);
 }
 
+// contoh foto untuk kartu filter
+function filterSample() {
+  const photo = state.photos[0];
+  if (!photo) return null;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 260;
+  canvas.height = Math.round(260 * photo.height / photo.width);
+  canvas.getContext('2d').drawImage(photo, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/jpeg', 0.82);
+}
+
 // grid filter
 function renderFilters() {
   const list = currentFilters();
   if (!list.some(function (item) { return item.id === state.filterId; })) {
     state.filterId = list[0].id;
   }
+
+  const sample = filterSample();
 
   el.filterGrid.innerHTML = '';
   list.forEach(function (filter) {
@@ -90,7 +105,11 @@ function renderFilters() {
 
     const preview = document.createElement('span');
     preview.className = 'filter-preview';
-    if (filter.cssFilter !== 'none') preview.style.filter = filter.cssFilter;
+
+    const media = document.createElement('span');
+    media.className = 'filter-preview-media';
+    if (sample) media.style.backgroundImage = 'url(' + sample + ')';
+    if (filter.cssFilter !== 'none') media.style.filter = filter.cssFilter;
 
     const check = document.createElement('span');
     check.className = 'card-check';
@@ -100,6 +119,7 @@ function renderFilters() {
     label.className = 'card-label';
     label.textContent = filter.name;
 
+    preview.appendChild(media);
     preview.appendChild(check);
     card.appendChild(preview);
     card.appendChild(label);
@@ -172,6 +192,7 @@ function renderHero() {
 
 // halaman capture
 function enterCapture() {
+  if (state.photos.length >= PHOTO_COUNT) resetSession();
   setCaptureMode('camera');
   requestCamera();
 }
@@ -224,7 +245,7 @@ function updateCaptureUI() {
   renderThumbs(el.stripPanelSlots, 'panel-slot');
   renderThumbs(el.uploadSlots, 'upload-slot');
 
-  el.stripPanelNote.textContent = 'filter ' + activeFilter().name + ' · ' + activeFrame().name;
+  el.stripPanelNote.textContent = 'frame ' + activeFrame().name;
   el.timerBtn.textContent = state.timerSeconds ? state.timerSeconds + 's' : 'off';
   el.uploadStatus.textContent = taken === 0
     ? 'Belum ada foto dipilih. Butuh ' + PHOTO_COUNT + ' foto.'
@@ -242,8 +263,6 @@ function renderThumbs(container, className) {
       thumb.width = 130;
       thumb.height = 96;
       thumb.getContext('2d').drawImage(photo, 0, 0, thumb.width, thumb.height);
-      const filter = activeFilter().cssFilter;
-      if (filter !== 'none') thumb.style.filter = filter;
       box.classList.add('is-filled');
       box.appendChild(thumb);
     } else {
@@ -312,7 +331,7 @@ function addPhoto(canvas) {
   if (state.photos.length >= PHOTO_COUNT) {
     setTimeout(function () {
       Camera.stop();
-      go('result');
+      go('filter');
     }, 600);
   }
 }
@@ -342,7 +361,7 @@ function handleUpload(files) {
       updateCaptureUI();
       if (state.photos.length >= PHOTO_COUNT) {
         Camera.stop();
-        go('result');
+        go('filter');
       }
     })
     .catch(function () {

@@ -35,7 +35,7 @@
     <button class="brand" type="button" data-nav="landing">SNAPSHOOT</button>
     <div class="head-right">
       <nav class="head-nav">
-        <button type="button" data-copy="nav.1" data-nav="filter"></button>
+        <button type="button" data-copy="nav.1" data-nav="frame"></button>
         <button type="button" data-copy="nav.2" data-nav="frame"></button>
         <button type="button" data-copy="nav.3" data-nav="landing"></button>
       </nav>
@@ -43,7 +43,7 @@
         <button type="button" data-theme-set="retro">Retro</button>
         <button type="button" data-theme-set="funky">Funky</button>
       </div>
-      <button class="btn btn-ghost head-cta" type="button" data-copy="nav.start" data-nav="filter"></button>
+      <button class="btn btn-ghost head-cta" type="button" data-copy="nav.start" data-nav="frame"></button>
     </div>
   </header>
 
@@ -62,7 +62,7 @@
       </h1>
       <p class="hero-sub" data-copy="hero.sub"></p>
       <div class="hero-actions">
-        <button class="btn btn-primary" type="button" data-copy="hero.cta" data-nav="filter"></button>
+        <button class="btn btn-primary" type="button" data-copy="hero.cta" data-nav="frame"></button>
         <button class="btn btn-ghost" type="button" data-copy="hero.ghost" data-nav="frame"></button>
       </div>
     </div>
@@ -74,34 +74,7 @@
   </div>
 
   <div class="page-foot foot-cta">
-    <button class="btn btn-primary btn-block" type="button" data-copy="hero.cta" data-nav="filter"></button>
-  </div>
-</section>
-
-<!-- pilih filter -->
-<section class="view view-filter" id="view-filter">
-  <div class="decor funky-decor" aria-hidden="true">
-    <span class="decor-word decor-word-filter">POP</span>
-    <span class="decor-star decor-star-a">✦</span>
-    <span class="decor-star decor-star-b">✧</span>
-  </div>
-
-  <div class="step-head">
-    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">←</button>
-    <div class="step-head-text">
-      <span class="step-badge" data-copy="filter.step"></span>
-      <h2 class="page-title" data-copy="filter.title"></h2>
-    </div>
-    <p class="page-sub" data-copy="filter.sub"></p>
-  </div>
-
-  <div class="page-body">
-    <div class="grid grid-filter" id="filter-grid"></div>
-  </div>
-
-  <div class="page-foot foot-bar">
-    <span class="foot-note" id="filter-note"></span>
-    <button class="btn btn-primary" type="button" data-copy="filter.next" data-nav="frame"></button>
+    <button class="btn btn-primary btn-block" type="button" data-copy="hero.cta" data-nav="frame"></button>
   </div>
 </section>
 
@@ -114,7 +87,7 @@
   </div>
 
   <div class="step-head">
-    <button class="round-btn" type="button" data-nav="filter" aria-label="Kembali">←</button>
+    <button class="round-btn" type="button" data-nav="landing" aria-label="Kembali">←</button>
     <div class="step-head-text">
       <span class="step-badge" data-copy="frame.step"></span>
       <h2 class="page-title" data-copy="frame.title"></h2>
@@ -204,6 +177,33 @@
     <label class="btn btn-primary btn-block" for="upload-input" data-copy="upload.pick"></label>
     <input type="file" id="upload-input" accept="image/*" multiple hidden>
     <button class="btn btn-outline btn-block" type="button" id="upload-back" data-copy="upload.back"></button>
+  </div>
+</section>
+
+<!-- pilih filter -->
+<section class="view view-filter" id="view-filter">
+  <div class="decor funky-decor" aria-hidden="true">
+    <span class="decor-word decor-word-filter">POP</span>
+    <span class="decor-star decor-star-a">✦</span>
+    <span class="decor-star decor-star-b">✧</span>
+  </div>
+
+  <div class="step-head">
+    <button class="round-btn" type="button" data-nav="capture" aria-label="Kembali">←</button>
+    <div class="step-head-text">
+      <span class="step-badge" data-copy="filter.step"></span>
+      <h2 class="page-title" data-copy="filter.title"></h2>
+    </div>
+    <p class="page-sub" data-copy="filter.sub"></p>
+  </div>
+
+  <div class="page-body">
+    <div class="grid grid-filter" id="filter-grid"></div>
+  </div>
+
+  <div class="page-foot foot-bar">
+    <span class="foot-note" id="filter-note"></span>
+    <button class="btn btn-primary" type="button" data-copy="filter.next" data-nav="result"></button>
   </div>
 </section>
 

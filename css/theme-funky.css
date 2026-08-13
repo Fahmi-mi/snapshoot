@@ -110,7 +110,6 @@
   --card-border: 3px solid #1C1C1E;
   --card-border-selected: 3px solid #1C1C1E;
   --filter-selected-shadow: inset 0 0 0 3px #FFFFFF;
-  --filter-preview-h: 100px;
   --filter-preview-radius: 8px 8px 0 0;
   --filter-label-gap: 0px;
   --frame-thumb-shadow: drop-shadow(4px 4px 0 #1F6BFF);
@@ -448,7 +447,6 @@
     --round-size: 46px;
     --ctrl-size: 56px;
     --shutter-size: 104px;
-    --filter-preview-h: 118px;
     --card-label-size: 15px;
     --countdown-size: 150px;
     --thumb-w: 74px;
