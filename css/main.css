@@ -618,9 +618,20 @@ label.btn { cursor: pointer; }
   .page-sub { margin: 0 0 0 auto; text-align: right; max-width: 38ch; }
 
   .frame-gallery { grid-template-columns: repeat(6, 1fr); }
-  .info-cards { grid-template-columns: repeat(3, 1fr); }
-  .info-inner { max-width: 1040px; }
   .info-body { padding-bottom: 34px; }
+  .info-inner { max-width: none; }
+  .view-howto .info-body, .view-about .info-body { display: flex; flex-direction: column; }
+  .view-howto .info-inner, .view-about .info-inner { margin-block: auto; }
+  .step-card, .info-card { padding: 26px 28px; }
+  .step-card h3, .info-card h3 { font-size: 23px; }
+  .step-card p, .info-card p { font-size: 16.5px; }
+  .step-card { gap: 18px; }
+  .step-card-num { width: 46px; height: 46px; font-size: 22px; }
+  .info-note { padding: 22px 26px; font-size: 16px; }
+  .about-text { max-width: none; }
+  .about-text p { font-size: 18px; line-height: 1.7; }
+  .view-about .info-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 44px; align-items: start; }
+  .view-about .info-cards { margin-top: 0; grid-template-columns: 1fr; }
   .grid-filter { grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .grid-frame { grid-template-columns: repeat(6, 1fr); gap: 22px; }
 
