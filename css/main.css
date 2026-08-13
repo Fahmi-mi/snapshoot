@@ -143,10 +143,10 @@ label.btn { cursor: pointer; }
 .theme-toggle button {
   font-family: var(--btn-font);
   font-weight: var(--btn-weight);
-  font-size: 11.5px;
+  font-size: var(--toggle-size);
   letter-spacing: .4px;
   text-transform: var(--btn-transform);
-  padding: 6px 13px;
+  padding: var(--toggle-pad);
   border-radius: 30px;
   color: var(--muted);
 }

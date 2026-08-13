@@ -44,6 +44,8 @@
   --shadow-stage: 7px 7px 0 #1C1C1E;
   --toggle-bw: 3px;
   --toggle-bc: #1C1C1E;
+  --toggle-size: 11.5px;
+  --toggle-pad: 6px 13px;
 
   --btn-font: 'Lilita One', sans-serif;
   --btn-weight: 400;
@@ -477,7 +479,10 @@
     --round-size: 48px;
     --shutter-size: 104px;
     --countdown-size: 170px;
-    --brand-size: 24px;
+    --brand-size: 28px;
+    --nav-size: 20px;
+    --toggle-size: 17px;
+    --toggle-pad: 12px 22px;
     --brand-bg: transparent;
     --brand-border: 0;
     --brand-pad: 0;

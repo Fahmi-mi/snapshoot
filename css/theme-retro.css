@@ -38,6 +38,8 @@
   --shadow-stage: none;
   --toggle-bw: 1px;
   --toggle-bc: rgba(74, 55, 40, .14);
+  --toggle-size: 11.5px;
+  --toggle-pad: 6px 13px;
 
   --btn-font: 'Fredoka', sans-serif;
   --btn-weight: 600;
@@ -288,8 +290,10 @@
     --ctrl-size: 52px;
     --countdown-circle: 190px;
     --countdown-size: 104px;
-    --brand-size: 15px;
+    --brand-size: 20px;
     --brand-tracking: 3px;
-    --nav-size: 14px;
+    --nav-size: 17px;
+    --toggle-size: 15px;
+    --toggle-pad: 14px 22px;
   }
 }
