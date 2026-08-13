@@ -247,6 +247,7 @@ function updateCaptureUI() {
 
   el.stripPanelNote.textContent = 'frame ' + activeFrame().name;
   el.timerBtn.textContent = state.timerSeconds ? state.timerSeconds + 's' : 'off';
+  syncRetakeBtn();
   el.uploadStatus.textContent = taken === 0
     ? 'Belum ada foto dipilih. Butuh ' + PHOTO_COUNT + ' foto.'
     : taken + ' dari ' + PHOTO_COUNT + ' foto siap.';
@@ -281,6 +282,7 @@ function stopCountdown() {
   }
   el.countdown.hidden = true;
   state.busy = false;
+  syncRetakeBtn();
 }
 
 function triggerShutter() {
@@ -291,6 +293,7 @@ function triggerShutter() {
   }
 
   state.busy = true;
+  syncRetakeBtn();
   let remaining = state.timerSeconds;
   el.countdown.hidden = false;
   el.countdownValue.textContent = String(remaining);
@@ -339,6 +342,21 @@ function addPhoto(canvas) {
 function resetSession() {
   stopCountdown();
   state.photos = [];
+  updateCaptureUI();
+}
+
+function syncRetakeBtn() {
+  el.resetBtn.disabled = !state.photos.length && !state.busy;
+}
+
+// batalkan hitung mundur, atau hapus foto terakhir
+function retakeLast() {
+  if (state.busy) {
+    stopCountdown();
+    return;
+  }
+  if (!state.photos.length) return;
+  state.photos.pop();
   updateCaptureUI();
 }
 
@@ -447,6 +465,7 @@ function cacheElements() {
   el.stripPanelSlots = $('strip-panel-slots');
   el.stripPanelNote = $('strip-panel-note');
   el.timerBtn = $('timer-btn');
+  el.resetBtn = $('reset-btn');
   el.resultCanvas = $('result-canvas');
   el.resultDetailText = $('result-detail-text');
   el.resultStatus = $('result-status');
@@ -460,7 +479,7 @@ function bindEvents() {
   });
 
   $('shutter').addEventListener('click', triggerShutter);
-  $('reset-btn').addEventListener('click', resetSession);
+  el.resetBtn.addEventListener('click', retakeLast);
   $('retry-camera').addEventListener('click', requestCamera);
   $('open-upload').addEventListener('click', function () { setCaptureMode('upload'); });
   $('upload-back').addEventListener('click', requestCamera);

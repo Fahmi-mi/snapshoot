@@ -40,6 +40,7 @@ Filter sengaja ditaruh **setelah** capture: dengan begitu tiap pilihan filter bi
 - Countdown timer sebelum tiap jepretan (misal 3-2-1)
 - Indikator progres: berapa foto sudah diambil dari total yang dibutuhkan (**fixed 4 foto per strip untuk semua frame** — bukan variable per frame, demi konsistensi copy dan kesederhanaan implementasi)
 - Tombol shutter besar, mudah di-tap dari HP
+- Tombol ulang (↺) menghapus **satu foto terakhir** setiap kali ditekan, bukan mereset seluruh sesi — jadi user bisa mundur bertahap. Kalau hitung mundur sedang berjalan, tekanan pertama membatalkan hitung mundur itu dulu. Tombolnya nonaktif saat belum ada foto
 - Setelah semua foto terkumpul, otomatis lanjut ke halaman pilih filter
 
 #### 3.3.1 State: izin kamera ditolak/belum diberikan

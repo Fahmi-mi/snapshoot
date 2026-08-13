@@ -81,6 +81,7 @@ label.btn { cursor: pointer; }
 }
 .round-btn.is-close .icon-back { display: none; }
 .round-btn:not(.is-close) .icon-close { display: none; }
+.round-btn:disabled { opacity: .4; cursor: default; }
 .round-spacer { width: var(--round-size); flex: 0 0 var(--round-size); }
 .round-btn-light { border-color: var(--round-light-bc); background: var(--round-light-bg); color: var(--round-light-ink); }
 .round-btn-soft {
