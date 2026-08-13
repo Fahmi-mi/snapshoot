@@ -11,6 +11,17 @@ const THEMES = ['retro', 'funky'];
 const CANVAS = { width: 600, height: 1800 };
 const SKIP = /^_|dummy|template/i;
 
+const MANIFEST_NOTE = [
+  'Font untuk caption hanya boleh dari yang dimuat index.html, dengan berat yang tersedia:',
+  'Caveat 600',
+  'Nunito 400, 600, 700',
+  'Fredoka 500, 600, 700',
+  'Lilita One 400 saja, tulis tanpa angka berat',
+  'Work Sans 400, 600, 800',
+  'Format: [berat] [ukuran]px "Nama Font", fallback. Nama lain akan jatuh ke font bawaan perangkat tanpa peringatan.',
+  'Kunci ini ditulis ulang otomatis oleh tools/sync-frames.mjs.'
+];
+
 const DEFAULT_CAPTION = {
   retro: { text: 'SNAPSHOOT · {date}', font: '600 44px "Caveat", cursive', color: '#2B2320', y: 1722 },
   funky: { text: 'SNAPSHOOT · {date}', font: '34px "Lilita One", sans-serif', color: '#1C1C1E', y: 1722, letterSpacing: 2 }
@@ -108,7 +119,7 @@ THEMES.forEach(function (theme) {
   });
 });
 
-writeFileSync(CONFIG_PATH, JSON.stringify(nextConfig, null, 2) + '\n');
+writeFileSync(CONFIG_PATH, JSON.stringify(Object.assign({ _font: MANIFEST_NOTE }, nextConfig), null, 2) + '\n');
 writeFileSync(OUTPUT_PATH,
   '// Dibuat otomatis oleh tools/sync-frames.mjs. Jangan diedit manual.\n' +
   'const framesByTheme = ' + JSON.stringify(generated, null, 2) + ';\n');
@@ -127,5 +138,5 @@ console.log(
 );
 
 if (report.added.length) {
-  console.log('Frame baru memakai caption default — cek warna dan posisinya di assets/frames/frames.json');
+  console.log('Frame baru memakai caption default. Cek warna dan posisinya di assets/frames/frames.json');
 }

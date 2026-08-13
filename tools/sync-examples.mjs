@@ -8,6 +8,12 @@ const CONFIG_PATH = join(EXAMPLES_DIR, 'examples.json');
 const OUTPUT_PATH = join(ROOT, 'js', 'examples.generated.js');
 
 const THEMES = ['retro', 'funky'];
+const MANIFEST_NOTE = [
+  'Contoh strip tidak memakai font apa pun karena gambarnya sudah jadi. Pengaturan font caption ada di assets/frames/frames.json.',
+  'id dan name diambil dari nama berkas. Ubah name di sini kalau mau judul kartu yang lain.',
+  'frame dan filter adalah teks bebas yang tampil sebagai keterangan di bawah kartu, boleh dikosongkan.',
+  'Kunci ini ditulis ulang otomatis oleh tools/sync-examples.mjs.'
+];
 const STRIP_RATIO = 600 / 1800;
 const RATIO_TOLERANCE = 0.02;
 const SIZE_WARN = 400 * 1024;
@@ -156,7 +162,7 @@ THEMES.forEach(function (theme) {
   });
 });
 
-writeFileSync(CONFIG_PATH, JSON.stringify(nextConfig, null, 2) + '\n');
+writeFileSync(CONFIG_PATH, JSON.stringify(Object.assign({ _catatan: MANIFEST_NOTE }, nextConfig), null, 2) + '\n');
 writeFileSync(OUTPUT_PATH,
   '// Dibuat otomatis oleh tools/sync-examples.mjs. Jangan diedit manual.\n' +
   'const examplesByTheme = ' + JSON.stringify(generated, null, 2) + ';\n');

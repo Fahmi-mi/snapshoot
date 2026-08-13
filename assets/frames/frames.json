@@ -1,4 +1,14 @@
 {
+  "_font": [
+    "Font untuk caption hanya boleh dari yang dimuat index.html, dengan berat yang tersedia:",
+    "Caveat 600",
+    "Nunito 400, 600, 700",
+    "Fredoka 500, 600, 700",
+    "Lilita One 400 saja, tulis tanpa angka berat",
+    "Work Sans 400, 600, 800",
+    "Format: [berat] [ukuran]px \"Nama Font\", fallback. Nama lain akan jatuh ke font bawaan perangkat tanpa peringatan.",
+    "Kunci ini ditulis ulang otomatis oleh tools/sync-frames.mjs."
+  ],
   "retro": [
     {
       "id": "sprocket",

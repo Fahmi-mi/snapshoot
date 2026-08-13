@@ -1,4 +1,10 @@
 {
+  "_catatan": [
+    "Contoh strip tidak memakai font apa pun karena gambarnya sudah jadi. Pengaturan font caption ada di assets/frames/frames.json.",
+    "id dan name diambil dari nama berkas. Ubah name di sini kalau mau judul kartu yang lain.",
+    "frame dan filter adalah teks bebas yang tampil sebagai keterangan di bawah kartu, boleh dikosongkan.",
+    "Kunci ini ditulis ulang otomatis oleh tools/sync-examples.mjs."
+  ],
   "retro": [],
   "funky": []
 }
