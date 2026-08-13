@@ -391,7 +391,6 @@
 [data-theme="funky"] .step-card-num { box-shadow: 3px 3px 0 #1C1C1E; }
 [data-theme="funky"] .info-note { background: #FFFFFF; box-shadow: 4px 4px 0 #1C1C1E; }
 [data-theme="funky"] .empty-state { background: #FFFFFF; border: 3px dashed #1C1C1E; box-shadow: 5px 5px 0 #1C1C1E; }
-[data-theme="funky"] .example-card img { border: 3px solid #1C1C1E; }
 [data-theme="funky"] .filter-card .card-label {
   padding: 7px 10px;
   border: 3px solid #1C1C1E;
