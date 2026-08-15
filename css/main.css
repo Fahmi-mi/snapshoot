@@ -651,6 +651,9 @@ label.btn { cursor: pointer; }
   .page-title { margin-top: 0; }
 
   .frame-gallery, .example-gallery { grid-template-columns: repeat(6, 1fr); }
+  .view-frames .info-body { display: flex; flex-direction: column; }
+  .view-frames .frame-gallery { margin: auto 0; }
+  .view-frames .frame-thumb { width: min(100%, calc(70vh / 3), calc((100vw - 192px) / 6)); }
   .empty-state { max-width: 620px; margin: 12px auto 0; padding: 48px 40px; }
   .empty-state h3 { font-size: 26px; }
   .empty-state p { font-size: 16.5px; }
