@@ -145,6 +145,7 @@
   --round-bg: #6B9B37;
   --round-ink: #FFFFFF;
   --shadow-round: 3px 3px 0 #1C1C1E;
+  --result-btn-size: 58px;
   --round-light-bc: #1C1C1E;
   --round-light-bg: #FFFFFF;
   --round-light-ink: #1C1C1E;
@@ -466,6 +467,7 @@
     --result-title-size: 46px;
     --btn-size: 20px;
     --btn-size-block: 22px;
+    --result-btn-size: 60px;
   }
 }
 
