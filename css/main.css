@@ -246,7 +246,7 @@ label.btn { cursor: pointer; }
 
 /* halaman info */
 .info-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: var(--grid-top) var(--pad) 28px; }
-.info-inner { max-width: 900px; }
+.info-inner { max-width: none; }
 .steps { display: grid; gap: var(--grid-gap); margin: 0; padding: 0; list-style: none; }
 .step-card {
   display: flex;
@@ -281,7 +281,7 @@ label.btn { cursor: pointer; }
   text-transform: var(--title-transform);
   color: var(--ink);
 }
-.step-card p, .info-card p, .about-text p { font-size: 15px; line-height: 1.6; color: var(--muted); }
+.step-card p, .info-card p, .about-text p { font-size: 15px; line-height: 1.6; color: var(--muted); text-align: justify; }
 .info-note {
   margin-top: var(--grid-gap);
   padding: 16px 18px;
@@ -290,8 +290,9 @@ label.btn { cursor: pointer; }
   font-size: 14.5px;
   line-height: 1.6;
   color: var(--muted);
+  text-align: justify;
 }
-.about-text { display: grid; gap: 14px; max-width: 62ch; }
+.about-text { display: grid; gap: 14px; }
 .about-text p { font-size: 16px; }
 .info-cards { display: grid; gap: var(--grid-gap); margin-top: 24px; }
 .info-card {
@@ -658,16 +659,12 @@ label.btn { cursor: pointer; }
   .empty-state h3 { font-size: 26px; }
   .empty-state p { font-size: 16.5px; }
   .info-body { padding-bottom: 34px; }
-  .info-inner { max-width: none; }
-  .view-howto .info-body, .view-about .info-body { display: flex; flex-direction: column; }
-  .view-howto .info-inner, .view-about .info-inner { margin-block: auto; }
   .step-card, .info-card { padding: 26px 28px; }
   .step-card h3, .info-card h3 { font-size: 23px; }
   .step-card p, .info-card p { font-size: 16.5px; }
   .step-card { gap: 18px; }
   .step-card-num { width: 46px; height: 46px; font-size: 22px; }
   .info-note { padding: 22px 26px; font-size: 16px; }
-  .about-text { max-width: none; }
   .about-text p { font-size: 18px; line-height: 1.7; }
   .view-about .info-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 44px; align-items: start; }
   .view-about .info-cards { margin-top: 0; grid-template-columns: 1fr; }
@@ -762,4 +759,25 @@ label.btn { cursor: pointer; }
     clip-path: inset(50%);
     white-space: nowrap;
   }
+}
+
+@media (min-width: 720px) {
+  .step-head-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex: 1;
+  }
+  .step-head-text .step-badge {
+    flex: 0 0 auto;
+    order: 2;
+    margin-left: auto;
+  }
+  .step-head-text .page-title {
+    margin-top: 0;
+  }
+  .view-howto .info-body, .view-about .info-body { display: flex; flex-direction: column; }
+  .view-howto .info-inner, .view-about .info-inner { margin-block: auto; }
 }
