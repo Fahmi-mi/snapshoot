@@ -358,7 +358,7 @@
   transform: rotate(1.5deg);
 }
 
-[data-theme="funky"] .hero-strip:first-child { filter: drop-shadow(5px 5px 0 #1F6BFF); transform: rotate(-5deg); }
+[data-theme="funky"] .hero-strip:first-child { filter: drop-shadow(5px 5px 0 #1F6BFF); transform: rotate(-5deg); --strip-tilt: -5deg; }
 [data-theme="funky"] .hero-strip:last-child { filter: drop-shadow(5px 5px 0 #F2A93C); transform: rotate(4deg); }
 
 /* pita checker di atas footer */

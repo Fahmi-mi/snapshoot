@@ -197,11 +197,18 @@ label.btn { cursor: pointer; }
 .hero-sub { margin-top: 12px; font-size: var(--hero-sub-size); line-height: 1.55; color: var(--muted); max-width: var(--hero-sub-width); }
 .hero-actions { display: none; gap: 14px; margin-top: 26px; }
 .hero-strips { flex: 1; min-height: 0; container-type: size; display: flex; justify-content: center; align-items: center; gap: 14px; padding: 4px 0; }
-.hero-strip { position: relative; display: inline-block; filter: var(--strip-shadow); }
+.hero-strip { position: relative; display: inline-block; filter: var(--strip-shadow); animation: strip-float 5s ease-in-out infinite; }
 .hero-strip::before { content: ''; position: absolute; top: 2.2%; bottom: 10%; left: 6.7%; right: 6.7%; background: var(--photo-placeholder); }
 .hero-strip img { position: relative; height: min(30vh, 268px, calc(100cqh - 16px)); width: auto; }
-.hero-strip:first-child { transform: rotate(-4deg); }
-.hero-strip:last-child { transform: rotate(4deg); margin-top: 16px; }
+.hero-strip:first-child { transform: rotate(-4deg); --strip-tilt: -4deg; }
+.hero-strip:last-child { transform: rotate(4deg); margin-top: 16px; --strip-tilt: 4deg; animation-delay: -2.5s; }
+@keyframes strip-float {
+  0%, 100% { transform: rotate(var(--strip-tilt)) translateY(0); }
+  50% { transform: rotate(var(--strip-tilt)) translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-strip { animation: none; }
+}
 
 .page-foot { padding: 16px var(--pad) var(--foot-bottom); display: flex; flex-direction: column; gap: 10px; }
 .page-foot[hidden] { display: none; }
