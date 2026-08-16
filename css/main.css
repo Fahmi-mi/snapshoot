@@ -208,6 +208,11 @@ label.btn { cursor: pointer; }
 .foot-cta { background: var(--foot-cta-bg); }
 .foot-bar { flex-direction: row; align-items: center; gap: 12px; background: var(--foot-bg); border-top: var(--foot-line); }
 .foot-note { flex: 1; font-family: var(--foot-font); font-weight: var(--foot-weight); font-size: var(--foot-size); color: var(--foot-ink); text-transform: var(--foot-transform); }
+.view-frame .foot-bar .theme-toggle { margin-right: auto; }
+
+@media (max-width: 1079px) {
+  .view-frame .foot-bar { align-items: stretch; }
+}
 
 /* judul langkah */
 .step-head {

@@ -180,7 +180,7 @@ function renderFrames() {
     el.frameGrid.appendChild(card);
   });
 
-  el.frameNote.textContent = activeFrame().name;
+  if (el.frameNote) el.frameNote.textContent = activeFrame().name;
 }
 
 // halaman info
