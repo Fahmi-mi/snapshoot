@@ -298,6 +298,22 @@
   background: repeating-conic-gradient(#F2A93C 0deg 3deg, transparent 3deg 15deg);
   opacity: .2;
 }
+[data-theme="funky"] .decor-star { animation: star-twinkle 3.2s ease-in-out infinite; }
+[data-theme="funky"] .decor-star-b { animation-delay: -1.6s; }
+[data-theme="funky"] .decor-rays { animation: rays-spin 60s linear infinite; }
+[data-theme="funky"] .hero-banner::before { animation: rays-spin 60s linear infinite; }
+@keyframes star-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
+}
+@keyframes rays-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="funky"] .decor-star,
+  [data-theme="funky"] .decor-rays,
+  [data-theme="funky"] .hero-banner::before { animation: none; }
+}
 
 [data-theme="funky"] .site-head { min-height: 0; padding-top: 10px; }
 [data-theme="funky"] .brand, [data-theme="funky"] .head-nav { display: none; }
