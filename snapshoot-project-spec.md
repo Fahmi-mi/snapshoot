@@ -19,34 +19,31 @@
 Alur linear, 5 halaman/step:
 
 ```
-Landing page → Pilih filter → Pilih frame → Capture foto → Hasil (download/share)
+Landing page → Pilih frame → Capture foto → Pilih filter → Hasil (download/share)
 ```
+
+Filter sengaja ditaruh **setelah** capture: dengan begitu tiap pilihan filter bisa ditampilkan langsung di atas foto milik user sendiri, bukan di atas gambar contoh — jadi keputusannya jauh lebih jelas.
 
 ### 3.1 Landing page
 - Hero section: headline, sedikit copy penjelasan, preview visual strip foto (statis/ilustrasi)
-- Tombol utama: **"Mulai Foto"** → lanjut ke halaman pilih filter
+- Tombol utama: **"Mulai Foto"** → lanjut ke halaman pilih frame
 - Tidak perlu login atau isi data apapun
 
-### 3.2 Pilih filter
-- Grid pilihan filter warna (contoh: Vintage, Hitam-Putih, Warna Cerah — jumlah dan nama final ditentukan saat desain)
-- Filter diterapkan lewat CSS `filter` untuk preview real-time, tapi untuk hasil akhir (export) filter diterapkan lewat manipulasi pixel canvas (lihat bagian 5.2)
-- Setelah pilih, lanjut ke halaman pilih frame
-- User bisa balik ganti filter tanpa kehilangan progres (state disimpan di JS, bukan re-load halaman)
-
-### 3.3 Pilih frame
+### 3.2 Pilih frame
 - Grid pilihan varian frame (minimal 3 varian, direkomendasikan lebih untuk variasi)
 - Tiap opsi ditampilkan sebagai **preview strip foto utuh** (bukan cuma potongan border), supaya user tahu persis hasil akhirnya akan terlihat seperti apa
 - Setelah pilih, lanjut ke halaman capture
 
-### 3.4 Capture foto
+### 3.3 Capture foto
 - Akses kamera lewat `getUserMedia` (butuh HTTPS — sudah terpenuhi otomatis oleh GitHub Pages)
-- Tampilan live preview kamera, dengan filter yang dipilih sebelumnya diterapkan sebagai preview (CSS filter)
+- Live preview kamera ditampilkan apa adanya (tanpa filter), karena filter baru dipilih di langkah berikutnya
 - Countdown timer sebelum tiap jepretan (misal 3-2-1)
 - Indikator progres: berapa foto sudah diambil dari total yang dibutuhkan (**fixed 4 foto per strip untuk semua frame** — bukan variable per frame, demi konsistensi copy dan kesederhanaan implementasi)
 - Tombol shutter besar, mudah di-tap dari HP
-- Setelah semua foto terkumpul, otomatis lanjut ke halaman hasil
+- Tombol ulang (↺) menghapus **satu foto terakhir** setiap kali ditekan, bukan mereset seluruh sesi — jadi user bisa mundur bertahap. Kalau hitung mundur sedang berjalan, tekanan pertama membatalkan hitung mundur itu dulu. Tombolnya nonaktif saat belum ada foto
+- Setelah semua foto terkumpul, halaman **tidak** berpindah sendiri: shutter dinonaktifkan dan tombol "Lanjut" muncul di pojok kanan atas. Ini disengaja supaya jepretan terakhir masih bisa diulang lewat tombol ↺, sama seperti tiga foto sebelumnya
 
-#### 3.4.1 State: izin kamera ditolak/belum diberikan
+#### 3.3.1 State: izin kamera ditolak/belum diberikan
 
 Ini adalah **state alternatif dari halaman capture**, muncul ketika `getUserMedia` promise reject (user menolak izin, atau belum pernah diberi izin sama sekali). Bukan halaman error generik — harus dirancang sebagai bagian dari flow, karena ini kemungkinan besar akan sering muncul (banyak user ragu kasih izin kamera ke website baru).
 
@@ -56,17 +53,23 @@ Ini adalah **state alternatif dari halaman capture**, muncul ketika `getUserMedi
 - Body text yang menjelaskan **kenapa** butuh akses kamera, dan yang lebih penting — **penegasan privasi**: foto diproses di perangkat pengguna sendiri dan tidak diunggah ke mana pun (poin ini krusial karena Snapshoot memang 100% client-side — jujur dan konsisten dengan arsitektur teknisnya, bukan cuma copy generik)
 - Kotak instruksi cara mengaktifkan izin kamera secara manual (klik ikon gembok di address bar → izin situs → kamera → izinkan → muat ulang halaman). Instruksi ini bisa sedikit berbeda tergantung browser, jadi buat copy yang cukup general atau deteksi browser untuk instruksi lebih spesifik jika worth the effort
 - Tombol utama: **"Coba minta izin lagi"** — trigger ulang request `getUserMedia`
-- Tombol sekunder (alternatif, bukan cuma retry): **"Unggah foto dari galeri"** — lihat 3.4.2
+- Tombol sekunder (alternatif, bukan cuma retry): **"Unggah foto dari galeri"** — lihat 3.3.2
 
-#### 3.4.2 Fitur tambahan: upload foto dari galeri (fallback tanpa kamera)
+#### 3.3.2 Fitur tambahan: upload foto dari galeri (fallback tanpa kamera)
 
 Ini fitur baru yang perlu ditambahkan ke scope — bukan cuma penanganan error, tapi **jalur alternatif penuh** untuk user yang tidak bisa/tidak mau kasih izin kamera (termasuk device tanpa kamera, atau browser yang tidak mendukung `getUserMedia`).
 
-- **Jumlah foto yang diupload: fixed 4, mengikuti jumlah slot frame yang sudah ditetapkan (lihat 3.4 & 5.3.1) — bukan lagi opsi terbuka.** User perlu upload tepat 4 foto (satu per satu atau sekaligus lewat `<input type="file" accept="image/*" multiple>` dengan validasi jumlah) sebelum bisa lanjut ke proses compositing. Ini konsisten dengan keputusan bahwa semua frame di kedua tema punya tepat 4 slot foto — jalur upload tidak boleh punya aturan jumlah yang berbeda dari jalur capture kamera
+- **Jumlah foto yang diupload: fixed 4, mengikuti jumlah slot frame yang sudah ditetapkan (lihat 3.3 & 5.3.1) — bukan lagi opsi terbuka.** User perlu upload tepat 4 foto (satu per satu atau sekaligus lewat `<input type="file" accept="image/*" multiple>` dengan validasi jumlah) sebelum bisa lanjut ke proses compositing. Ini konsisten dengan keputusan bahwa semua frame di kedua tema punya tepat 4 slot foto — jalur upload tidak boleh punya aturan jumlah yang berbeda dari jalur capture kamera
 - Perlakukan tiap foto yang diupload sebagai pengganti satu "jepretan" — jadi alur progresnya (1 dari 4, 2 dari 4, dst) tetap konsisten dengan flow capture normal, cuma sumber gambarnya beda (file yang diupload, bukan frame dari video stream)
 - Sediakan validasi yang jelas kalau user upload kurang atau lebih dari 4 foto (misal disable tombol lanjut sampai tepat 4 foto terkumpul, dengan indikator progres yang sama seperti di halaman capture kamera)
 - Setelah foto terkumpul (baik dari kamera maupun upload, atau kombinasi keduanya), lanjut ke proses compositing yang sama seperti biasa (lihat 5.3) — filter dan frame tetap diterapkan dengan cara yang sama
-- Foto yang diupload tetap diproses sepenuhnya di browser (canvas), tidak dikirim ke server manapun — konsisten dengan prinsip privasi yang disebutkan di 3.4.1
+- Foto yang diupload tetap diproses sepenuhnya di browser (canvas), tidak dikirim ke server manapun — konsisten dengan prinsip privasi yang disebutkan di 3.3.1
+
+### 3.4 Pilih filter
+- Grid pilihan filter warna (contoh: Vintage, Hitam-Putih, Warna Cerah — jumlah dan nama final ditentukan saat desain)
+- Tiap kartu menampilkan **foto pertama hasil jepretan user** dengan filter tersebut sudah diterapkan, bukan gambar contoh — inilah alasan langkah ini ditaruh setelah capture
+- Filter diterapkan lewat CSS `filter` untuk preview, tapi untuk hasil akhir (export) filter diterapkan lewat manipulasi pixel canvas (lihat bagian 5.2)
+- Setelah pilih, lanjut ke halaman hasil. User bisa balik ganti filter tanpa kehilangan progres (state disimpan di JS, bukan re-load halaman)
 
 ### 3.5 Halaman hasil
 - Preview strip foto final: 4 foto tersusun + frame yang dipilih + filter yang diterapkan, semua sudah di-composite jadi satu gambar (lihat bagian 5.3)
@@ -297,7 +300,7 @@ Data yang perlu disimpan selama satu sesi (di JS variable/state, tidak perlu per
 - **HTTPS wajib** untuk akses kamera (`getUserMedia`) — otomatis terpenuhi di GitHub Pages, tidak perlu setup tambahan
 - Prioritaskan **mobile-first**, karena target pengguna kemungkinan besar mengakses dari HP untuk foto bareng
 - Tidak ada data pengguna yang dikirim/disimpan ke server manapun — seluruh proses murni di browser
-- Perlu penanganan graceful kalau user menolak izin akses kamera (`getUserMedia` promise rejection) — lihat detail lengkap state ini di bagian 3.4.1, termasuk fallback upload dari galeri di 3.4.2. Ini bukan sekadar pesan error, tapi state UI penuh yang sudah dirancang.
+- Perlu penanganan graceful kalau user menolak izin akses kamera (`getUserMedia` promise rejection) — lihat detail lengkap state ini di bagian 3.3.1, termasuk fallback upload dari galeri di 3.3.2. Ini bukan sekadar pesan error, tapi state UI penuh yang sudah dirancang.
 
 ## 9. Future considerations (di luar scope MVP)
 
