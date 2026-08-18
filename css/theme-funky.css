@@ -290,9 +290,9 @@
   position: absolute;
   top: 44%;
   left: 50%;
-  width: 1600px;
-  height: 1600px;
-  margin: -800px 0 0 -800px;
+  width: 200vmax;
+  height: 200vmax;
+  margin: -100vmax 0 0 -100vmax;
   background: repeating-conic-gradient(#F2A93C 0deg 3deg, transparent 3deg 15deg);
   opacity: .2;
 }
