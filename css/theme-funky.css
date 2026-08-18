@@ -212,8 +212,6 @@
   --notice-icon-bg: #F2A93C;
   --notice-icon-border: 3px solid #1C1C1E;
   --notice-icon-ink: #1C1C1E;
-  --notice-slash-h: 4px;
-  --notice-slash-border: 2px solid #1C1C1E;
   --notice-box-bg: #1F6BFF;
   --notice-box-border: 3px solid #1C1C1E;
   --notice-box-radius: 12px;
@@ -419,25 +417,6 @@
 [data-theme="funky"] .filter-card.is-selected .card-label { background: #FF1F8F; color: #FFFFFF; }
 [data-theme="funky"] .frame-card.is-selected .frame-thumb { filter: drop-shadow(4px 4px 0 #F2A93C); }
 
-[data-theme="funky"] .notice-sticker {
-  position: absolute;
-  top: -18px;
-  right: -14px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #E8232A;
-  border: 3px solid #1C1C1E;
-  box-shadow: 3px 3px 0 #1C1C1E;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Lilita One', sans-serif;
-  font-size: 11px;
-  line-height: 1.1;
-  color: #FFFFFF;
-  transform: rotate(12deg);
-}
 [data-theme="funky"] .result-sticker {
   position: absolute;
   top: -18px;
@@ -558,13 +537,6 @@
     --notice-title-size: 23px;
     --notice-text-size: 13.5px;
     --notice-icon-size: 62px;
-  }
-  [data-theme="funky"] .notice-sticker {
-    width: 44px;
-    height: 44px;
-    top: -12px;
-    right: -9px;
-    font-size: 8.5px;
   }
   [data-theme="funky"] .capture-foot .btn {
     padding: 12px 20px;
