@@ -544,8 +544,25 @@ label.btn { cursor: pointer; }
   align-items: center;
   justify-content: center;
 }
-.notice-icon-body { width: 36px; height: 28px; border: 3px solid var(--notice-icon-ink); border-radius: 6px; }
-.notice-icon-slash { position: absolute; width: 66px; height: var(--notice-slash-h); border-radius: 3px; background: var(--danger); border: var(--notice-slash-border); transform: rotate(-38deg); }
+.notice-icon-camera {
+  width: 54%;
+  height: 54%;
+  fill: none;
+  stroke: var(--notice-icon-ink);
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: var(--icon-cap);
+  stroke-linejoin: var(--icon-join);
+}
+.notice-icon-slash {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--danger);
+  stroke-width: calc(var(--notice-icon-size) / 26);
+  stroke-linecap: round;
+}
 .notice-icon-upload { font-family: var(--font-display); font-size: 30px; color: var(--notice-icon-ink); }
 .notice-title { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--notice-title-size); line-height: 1.1; text-transform: var(--title-transform); color: var(--notice-ink); }
 .notice-text { margin-top: 10px; font-size: var(--notice-text-size); line-height: 1.6; color: var(--notice-muted); }
