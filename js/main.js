@@ -527,17 +527,28 @@ function shareStrip() {
   el.resultCanvas.toBlob(function (blob) {
     if (!blob) return;
 
-    try {
-      const file = new File([blob], 'snapshoot-strip.png', { type: 'image/png' });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        navigator.share({ files: [file], title: 'Snapshoot', text: 'Strip foto dari Snapshoot' })
-          .catch(function () {});
-        return;
-      }
-    } catch (e) {}
+    const file = new File([blob], 'snapshoot-strip.png', { type: 'image/png' });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: 'Snapshoot', text: 'Strip foto dari Snapshoot' })
+        .catch(function () {});
+      return;
+    }
+
+    if (navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+      navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+        .then(function () {
+          el.resultStatus.textContent = 'Strip disalin ke clipboard';
+        })
+        .catch(function () {
+          downloadStrip();
+          el.resultStatus.textContent = 'Tidak bisa membagikan langsung, strip sudah diunduh';
+        });
+      return;
+    }
 
     downloadStrip();
-    el.resultStatus.textContent = 'Browser ini belum mendukung share langsung — strip sudah diunduh, tinggal bagikan manual.';
+    el.resultStatus.textContent = 'Browser belum mendukung bagikan langsung, strip sudah diunduh';
   }, 'image/png');
 }
 
