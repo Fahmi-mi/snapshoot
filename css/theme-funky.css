@@ -551,6 +551,32 @@
 @media (max-width: 719px) {
   [data-theme="funky"] .view-landing .decor-star,
   [data-theme="funky"] .view-landing .decor-dots { display: none; }
+  [data-theme="funky"] {
+    --notice-border: 3px solid #1C1C1E;
+    --notice-pad: 18px 16px 16px;
+    --notice-gap: 12px;
+    --notice-title-size: 23px;
+    --notice-text-size: 13.5px;
+    --notice-icon-size: 62px;
+  }
+  [data-theme="funky"] .notice-sticker {
+    width: 44px;
+    height: 44px;
+    top: -12px;
+    right: -9px;
+    font-size: 8.5px;
+  }
+  [data-theme="funky"] .capture-foot .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  [data-theme="funky"] .capture-foot {
+    margin-top: 10px;
+  }
+  [data-theme="funky"] .capture-foot::before {
+    top: -10px;
+    height: 8px;
+  }
 }
 
 @media (min-width: 720px) and (max-width: 1079px) {
